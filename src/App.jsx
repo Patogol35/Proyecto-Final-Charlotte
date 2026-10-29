@@ -25,8 +25,10 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState("es");
 
+  // Traducciones del idioma seleccionado
   const t = language === "es" ? es : en;
 
+  // Banco de preguntas según el idioma
   const allQuestions =
     language === "es" ? spanishQuestions : englishQuestions;
 
@@ -43,36 +45,48 @@ export default function App() {
     restartQuiz,
   } = useQuiz(allQuestions, difficulty);
 
+  // Cargar preferencias guardadas
   useEffect(() => {
-    const savedDark = localStorage.getItem("darkMode");
-    const savedDiff = localStorage.getItem("difficulty");
-    const savedLanguage = localStorage.getItem("language");
+    try {
+      const savedDark = localStorage.getItem("darkMode");
+      const savedDiff = localStorage.getItem("difficulty");
+      const savedLanguage = localStorage.getItem("language");
 
-    if (savedDark !== null) {
-      setDarkMode(JSON.parse(savedDark));
-    }
+      if (savedDark !== null) {
+        setDarkMode(JSON.parse(savedDark));
+      }
 
-    if (savedDiff) {
-      setDifficulty(savedDiff);
-    }
+      if (
+        savedDiff &&
+        ["easy", "medium", "hard"].includes(savedDiff)
+      ) {
+        setDifficulty(savedDiff);
+      }
 
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
+      if (savedLanguage && ["es", "en"].includes(savedLanguage)) {
+        setLanguage(savedLanguage);
+      }
+    } catch (error) {
+      console.error("Error loading saved preferences:", error);
     }
   }, []);
 
+  // Guardar modo oscuro
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
+  // Guardar dificultad
   useEffect(() => {
     localStorage.setItem("difficulty", difficulty);
   }, [difficulty]);
 
+  // Guardar idioma
   useEffect(() => {
     localStorage.setItem("language", language);
   }, [language]);
 
+  // Tema visual
   const theme = useMemo(
     () =>
       createTheme({
@@ -101,20 +115,16 @@ export default function App() {
     [darkMode]
   );
 
+  // Iniciar el quiz
   const handleStart = () => {
     startQuiz();
     setWelcome(false);
   };
 
+  // Volver a la pantalla inicial y reiniciar
   const handleRestart = () => {
     restartQuiz();
     setWelcome(true);
-  };
-
-  const handleLanguageChange = () => {
-    setLanguage((previous) =>
-      previous === "es" ? "en" : "es"
-    );
   };
 
   return (
@@ -124,6 +134,8 @@ export default function App() {
       <Box
         sx={{
           minHeight: "100vh",
+          width: "100%",
+          boxSizing: "border-box",
           background: darkMode
             ? "linear-gradient(135deg, #0f172a, #1e293b)"
             : "linear-gradient(135deg, #f1f5f9, #e2e8f0)",
@@ -145,7 +157,7 @@ export default function App() {
               setDarkMode((previous) => !previous)
             }
             language={language}
-            onLanguageChange={handleLanguageChange}
+            setLanguage={setLanguage}
             t={t}
           />
         ) : !finished ? (
