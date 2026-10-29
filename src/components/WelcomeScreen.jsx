@@ -167,43 +167,27 @@ export default function WelcomeScreen({
           </Typography>
 
           {/* PROYECTO E INSTITUTO */}
-<Typography
-  variant="subtitle1"
-  fontWeight={700}
-  sx={{
-    mb: 1,
-    color: "text.primary",
-  }}
->
-  {text.project}
-</Typography>
+          <Typography
+            variant="subtitle1"
+            fontWeight={700}
+            sx={{
+              mb: 0.5,
+              color: "text.primary",
+            }}
+          >
+            {text.project}
+          </Typography>
 
-<Box
-  sx={{
-    display: "inline-block",
-    px: 2.5,
-    py: 1,
-    mb: 3,
-    borderRadius: 2,
-    backgroundColor: (theme) =>
-      theme.palette.mode === "dark" ? "#263b5b" : "#e4efff",
-    border: "1px solid",
-    borderColor: (theme) =>
-      theme.palette.mode === "dark" ? "#5476a8" : "#a8caff",
-  }}
->
-  <Typography
-    variant="body1"
-    fontWeight={800}
-    sx={{
-      color: (theme) =>
-        theme.palette.mode === "dark" ? "#bfdbfe" : "#174ea6",
-      letterSpacing: 0.3,
-    }}
-  >
-    {text.institute}
-  </Typography>
-</Box>
+          <Typography
+            variant="body2"
+            sx={{
+              mb: 3,
+              color: "text.secondary",
+              letterSpacing: 0.3,
+            }}
+          >
+            {text.institute}
+          </Typography>
 
           {/* DESARROLLADOR */}
           <Typography
@@ -383,4 +367,4 @@ export default function WelcomeScreen({
       </Card>
     </motion.div>
   );
-            }
+          }
