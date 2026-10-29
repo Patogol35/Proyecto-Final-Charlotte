@@ -105,7 +105,7 @@ export default function WelcomeScreen({
             spacing={0.5}
             sx={{ mb: 3 }}
           >
-            <TranslateIcon fontSize="small" color="action" />
+            
 
             <Button
               size="small"
