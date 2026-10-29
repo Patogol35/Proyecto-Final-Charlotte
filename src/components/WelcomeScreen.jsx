@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -13,6 +14,7 @@ import {
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import TranslateIcon from "@mui/icons-material/Translate";
 import InfoIcon from "@mui/icons-material/Info";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import TimerIcon from "@mui/icons-material/Timer";
@@ -27,7 +29,16 @@ export default function WelcomeScreen({
   difficulty,
   darkMode,
   toggleDarkMode,
+  language,
+  onLanguageChange,
+  t,
 }) {
+  const difficultyLevels = [
+    { value: "easy", label: t.easy, color: "#16a34a", hover: "#15803d" },
+    { value: "medium", label: t.medium, color: "#2563eb", hover: "#1d4ed8" },
+    { value: "hard", label: t.hard, color: "#dc2626", hover: "#b91c1c" },
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -49,70 +60,55 @@ export default function WelcomeScreen({
         }}
       >
         <CardContent>
-
-          {/* TITULO + DARK MODE */}
           <Stack
             direction="row"
             alignItems="center"
             justifyContent="center"
-            spacing={2}
+            spacing={1}
             mb={2}
           >
             <Typography
               variant="h4"
               fontWeight="bold"
+              sx={{ color: "#2563eb", flexGrow: 1 }}
+            >
+              {t.title}
+            </Typography>
+
+            <IconButton
+              onClick={onLanguageChange}
+              aria-label="Change language"
+              title={t.switchLanguage}
               sx={{
-                color: "#2563eb",
+                border: "1px solid",
+                borderColor: "divider",
               }}
             >
-              Quiz Interactivo
-            </Typography>
+              <TranslateIcon />
+            </IconButton>
 
             <IconButton
               onClick={toggleDarkMode}
               color="inherit"
-              sx={{
-                border: "1px solid",
-                borderColor: (theme) =>
-                  theme.palette.mode === "dark"
-                    ? "#f1f5f9"
-                    : "#1e293b",
-              }}
+              aria-label="Toggle dark mode"
+              sx={{ border: "1px solid", borderColor: "divider" }}
             >
               {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
           </Stack>
 
-          {/* DESARROLLADOR */}
-          <Typography
-            variant="body2"
-            sx={{
-              mb: 3,
-              fontWeight: 500,
-              color: (theme) =>
-                theme.palette.mode === "dark"
-                  ? "#cbd5f5"
-                  : "#334155",
-            }}
-          >
-            Desarrollado por{" "}
+          <Typography variant="body2" sx={{ mb: 3, fontWeight: 500 }}>
+            {t.developedBy}{" "}
             <Box
               component="span"
-              sx={{
-                fontWeight: 700,
-                color: (theme) =>
-                  theme.palette.mode === "dark"
-                    ? "#60a5fa"
-                    : "#1d4ed8",
-              }}
+              sx={{ fontWeight: 700, color: "primary.main" }}
             >
               Jorge Patricio Santamaría Cherrez
             </Box>
           </Typography>
 
-          {/* INSTRUCCIONES */}
           <Stack
-            spacing={1}
+            spacing={1.5}
             sx={{
               textAlign: "left",
               p: 3,
@@ -122,7 +118,8 @@ export default function WelcomeScreen({
                 theme.palette.mode === "dark"
                   ? "rgba(100,116,139,0.15)"
                   : "rgba(96,165,250,0.08)",
-              border: "1px solid rgba(0,0,0,0.05)",
+              border: "1px solid",
+              borderColor: "divider",
             }}
           >
             <Typography
@@ -135,116 +132,72 @@ export default function WelcomeScreen({
               }}
             >
               <InfoIcon fontSize="small" />
-              Instrucciones
+              {t.instructions}
             </Typography>
 
-            <Typography
-  variant="body2"
-  sx={{ display: "flex", alignItems: "center", gap: 1 }}
->
-  <CheckCircleIcon fontSize="small" color="success" />
-  <span>
-    Responde <b>un total de 20 preguntas, a 0.5 puntos cada una.</b>
-  </span>
-</Typography>
+            <Typography variant="body2" sx={{ display: "flex", gap: 1 }}>
+              <CheckCircleIcon fontSize="small" color="success" />
+              <span>{t.randomQuestions}</span>
+            </Typography>
 
-            <Typography
-              variant="body2"
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
-            >
+            <Typography variant="body2" sx={{ display: "flex", gap: 1 }}>
               <TimerIcon fontSize="small" color="warning" />
-              Tienes un límite de tiempo para cada pregunta.
+              {t.timePerQuestion}{" "}
+              {difficulty === "easy"
+                ? 15
+                : difficulty === "medium"
+                ? 10
+                : 5}
+              {t.seconds}
             </Typography>
 
-            <Typography
-              variant="body2"
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
-            >
+            <Typography variant="body2" sx={{ display: "flex", gap: 1 }}>
               <EmojiEventsIcon fontSize="small" color="primary" />
-              Gana puntos por cada respuesta correcta.
+              {t.correctAnswerPoints}
             </Typography>
 
-            <Typography
-              variant="body2"
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
-            >
+            <Typography variant="body2" sx={{ display: "flex", gap: 1 }}>
               <BarChartIcon fontSize="small" color="action" />
-              Elige la dificultad antes de comenzar.
+              {t.selectDifficulty}
             </Typography>
           </Stack>
 
-          {/* SELECCION DE DIFICULTAD */}
           <Stack spacing={2} alignItems="center">
-
             <Typography variant="body2" fontWeight={600}>
-              Selecciona la dificultad:
+              {t.selectDifficulty}
             </Typography>
 
-            <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-              <ToggleButtonGroup
-                exclusive
-                value={difficulty}
-                onChange={(e, val) => val && setDifficulty(val)}
-                sx={{
-                  width: "100%",
-                  maxWidth: 360,
-                  display: "flex",
-                }}
-              >
-                {["easy", "medium", "hard"].map((level) => {
-
-                  const colors = {
-                    easy: { main: "#16a34a", hover: "#15803d" },
-                    medium: { main: "#2563eb", hover: "#1d4ed8" },
-                    hard: { main: "#dc2626", hover: "#b91c1c" },
-                  };
-
-                  const label =
-                    level === "easy"
-                      ? "Fácil"
-                      : level === "medium"
-                      ? "Medio"
-                      : "Difícil";
-
-                  return (
-                    <ToggleButton
-                      key={level}
-                      value={level}
-                      sx={{
-                        flex: 1,
-                        fontWeight: 600,
-                        borderRadius: 2,
-                        textAlign: "center",
-                        color:
-                          difficulty === level
-                            ? "#fff"
-                            : "inherit",
-                        backgroundColor:
-                          difficulty === level
-                            ? colors[level].main
-                            : "transparent",
-
-                        "&.Mui-selected": {
-                          backgroundColor:
-                            colors[level].main,
-                          color: "#fff",
-                        },
-
-                        "&.Mui-selected:hover": {
-                          backgroundColor:
-                            colors[level].hover,
-                        },
-                      }}
-                    >
-                      {label}
-                    </ToggleButton>
-                  );
-                })}
-              </ToggleButtonGroup>
-            </Box>
+            <ToggleButtonGroup
+              exclusive
+              value={difficulty}
+              onChange={(_, value) => {
+                if (value) setDifficulty(value);
+              }}
+              sx={{ width: "100%", maxWidth: 360, display: "flex" }}
+            >
+              {difficultyLevels.map((level) => (
+                <ToggleButton
+                  key={level.value}
+                  value={level.value}
+                  sx={{
+                    flex: 1,
+                    fontWeight: 600,
+                    borderRadius: 2,
+                    "&.Mui-selected": {
+                      backgroundColor: level.color,
+                      color: "#fff",
+                    },
+                    "&.Mui-selected:hover": {
+                      backgroundColor: level.hover,
+                    },
+                  }}
+                >
+                  {level.label}
+                </ToggleButton>
+              ))}
+            </ToggleButtonGroup>
           </Stack>
 
-          {/* BOTON COMENZAR */}
           <Box mt={4}>
             <Button
               variant="contained"
@@ -258,12 +211,11 @@ export default function WelcomeScreen({
                 textTransform: "none",
               }}
             >
-              Comenzar
+              {t.start}
             </Button>
           </Box>
-
         </CardContent>
       </Card>
     </motion.div>
   );
-              }
+}
