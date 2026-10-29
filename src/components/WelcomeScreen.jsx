@@ -182,7 +182,8 @@ export default function WelcomeScreen({
             variant="body2"
             sx={{
               mb: 3,
-              color: "text.secondary",
+              
+              color: "text.primary",
               letterSpacing: 0.3,
             }}
           >
