@@ -1,4 +1,3 @@
-
 import {
   Card,
   CardContent,
@@ -20,7 +19,6 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import TimerIcon from "@mui/icons-material/Timer";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import BarChartIcon from "@mui/icons-material/BarChart";
-import TranslateIcon from "@mui/icons-material/Translate";
 
 import { motion } from "framer-motion";
 
@@ -37,6 +35,12 @@ export default function WelcomeScreen({
 
   const text = {
     title: isEnglish ? "Interactive Quiz" : "Quiz Interactivo",
+    project: isEnglish
+      ? "English Final Project"
+      : "Proyecto Final de Inglés",
+    institute: isEnglish
+      ? "Charlotte Institute"
+      : "Instituto Charlotte",
     developed: isEnglish ? "Developed by" : "Desarrollado por",
     instructions: isEnglish ? "Instructions" : "Instrucciones",
     questions: isEnglish
@@ -96,7 +100,9 @@ export default function WelcomeScreen({
             "0 8px 25px rgba(0,0,0,0.15),0 4px 12px rgba(0,0,0,0.05)",
         }}
       >
-        <CardContent sx={{ p: { xs: 1, sm: 2 }, "&:last-child": { pb: 1 } }}>
+        <CardContent
+          sx={{ p: { xs: 1, sm: 2 }, "&:last-child": { pb: 1 } }}
+        >
           {/* IDIOMA Y TEMA */}
           <Stack
             direction="row"
@@ -105,8 +111,6 @@ export default function WelcomeScreen({
             spacing={0.5}
             sx={{ mb: 3 }}
           >
-            
-
             <Button
               size="small"
               variant={language === "es" ? "contained" : "outlined"}
@@ -155,11 +159,34 @@ export default function WelcomeScreen({
             fontWeight="bold"
             sx={{
               color: "#2563eb",
-              mb: 2,
+              mb: 1.5,
               fontSize: { xs: "1.8rem", sm: "2.125rem" },
             }}
           >
             {text.title}
+          </Typography>
+
+          {/* PROYECTO E INSTITUTO */}
+          <Typography
+            variant="subtitle1"
+            fontWeight={700}
+            sx={{
+              mb: 0.5,
+              color: "text.primary",
+            }}
+          >
+            {text.project}
+          </Typography>
+
+          <Typography
+            variant="body2"
+            sx={{
+              mb: 3,
+              color: "text.secondary",
+              letterSpacing: 0.3,
+            }}
+          >
+            {text.institute}
           </Typography>
 
           {/* DESARROLLADOR */}
@@ -340,5 +367,4 @@ export default function WelcomeScreen({
       </Card>
     </motion.div>
   );
-                   }
-                         
+              }
