@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -7,10 +8,22 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
+
 import { motion } from "framer-motion";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
-export default function InstructionsScreen({ onStart, difficulty }) {
+export default function InstructionsScreen({
+  onStart,
+  difficulty,
+  t,
+}) {
+  const seconds =
+    difficulty === "easy"
+      ? 15
+      : difficulty === "medium"
+      ? 10
+      : 5;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -30,35 +43,34 @@ export default function InstructionsScreen({ onStart, difficulty }) {
       >
         <CardContent>
           <Typography variant="h4" gutterBottom>
-            📖 Instrucciones
+            📖 {t.instructions}
           </Typography>
+
           <Typography variant="body1" gutterBottom>
-            Antes de empezar, revisa cómo funciona el juego:
+            {t.instructionsDescription}
           </Typography>
 
           <List sx={{ textAlign: "left", mb: 3 }}>
             <ListItem>
-              <ListItemText primary="🔹 Responde 10 preguntas al azar." />
+              <ListItemText primary={`🔹 ${t.randomQuestions}`} />
             </ListItem>
+
             <ListItem>
               <ListItemText
-                primary={`🔹 Tiempo por pregunta: ${
-                  difficulty === "easy"
-                    ? "15 segundos"
-                    : difficulty === "medium"
-                    ? "10 segundos"
-                    : "5 segundos"
-                }.`}
+                primary={`🔹 ${t.timePerQuestion} ${seconds}${t.seconds}`}
               />
             </ListItem>
+
             <ListItem>
-              <ListItemText primary="🔹 Cada respuesta correcta suma 1 punto." />
+              <ListItemText primary={`🔹 ${t.correctAnswerPoints}`} />
             </ListItem>
+
             <ListItem>
-              <ListItemText primary="🔹 Si se acaba el tiempo, la pregunta se marca como incorrecta." />
+              <ListItemText primary={`🔹 ${t.timeRunsOut}`} />
             </ListItem>
+
             <ListItem>
-              <ListItemText primary="🔹 Al final verás tu puntaje y tu récord personal." />
+              <ListItemText primary={`🔹 ${t.finalScoreRecord}`} />
             </ListItem>
           </List>
 
@@ -70,10 +82,10 @@ export default function InstructionsScreen({ onStart, difficulty }) {
             onClick={onStart}
             sx={{ px: 5, py: 1.5, borderRadius: 3 }}
           >
-            ¡Empezar!
+            {t.start}
           </Button>
         </CardContent>
       </Card>
     </motion.div>
   );
-}
+              }
