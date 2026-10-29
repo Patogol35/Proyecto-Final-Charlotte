@@ -35,41 +35,30 @@ export default function WelcomeScreen({
 
   const text = {
     title: isEnglish ? "Interactive Quiz" : "Quiz Interactivo",
-
     project: isEnglish
       ? "English Final Project"
       : "Proyecto Final de Inglés",
-
     institute: isEnglish
-      ? "Charlotte English School"
-      : "Escuela de Inglés Charlotte",
-
+  ? "Charlotte English School"
+  : "Escuela de Inglés Charlotte",
     developed: isEnglish ? "Developed by" : "Desarrollado por",
-
     instructions: isEnglish ? "Instructions" : "Instrucciones",
-
     questions: isEnglish
       ? "Answer a total of 20 questions, worth 0.5 points each."
       : "Responde un total de 20 preguntas, a 0.5 puntos cada una.",
-
     time: isEnglish
       ? "You have a time limit for each question."
       : "Tienes un límite de tiempo para cada pregunta.",
-
     points: isEnglish
       ? "Earn points for each correct answer."
       : "Gana puntos por cada respuesta correcta.",
-
     difficulty: isEnglish
       ? "Choose the difficulty before starting:"
       : "Selecciona la dificultad:",
-
     easy: isEnglish ? "Easy" : "Fácil",
     medium: isEnglish ? "Medium" : "Medio",
     hard: isEnglish ? "Hard" : "Difícil",
-
     start: isEnglish ? "Start" : "Comenzar",
-
     theme: isEnglish
       ? darkMode
         ? "Switch to light mode"
@@ -177,45 +166,28 @@ export default function WelcomeScreen({
             {text.title}
           </Typography>
 
-          {/* PROYECTO E INSTITUCIÓN */}
-          <Box
+          {/* PROYECTO E INSTITUTO */}
+          <Typography
+            variant="subtitle1"
+            fontWeight={700}
             sx={{
-              mb: 3,
-              px: { xs: 2, sm: 3 },
-              py: 2,
-              borderRadius: 3,
-              background: (theme) =>
-                theme.palette.mode === "dark" ? "#263b5b" : "#e4efff",
-              border: "1px solid",
-              borderColor: (theme) =>
-                theme.palette.mode === "dark" ? "#5476a8" : "#a8caff",
+              mb: 0.5,
+              color: "text.primary",
             }}
           >
-            <Typography
-              variant="subtitle1"
-              fontWeight={800}
-              sx={{
-                mb: 0.75,
-                fontSize: { xs: "1rem", sm: "1.1rem" },
-                color: (theme) =>
-                  theme.palette.mode === "dark" ? "#bfdbfe" : "#174ea6",
-              }}
-            >
-              {text.project}
-            </Typography>
+            {text.project}
+          </Typography>
 
-            <Typography
-              variant="body1"
-              fontWeight={700}
-              sx={{
-                color: (theme) =>
-                  theme.palette.mode === "dark" ? "#ffffff" : "#1e293b",
-                letterSpacing: 0.3,
-              }}
-            >
-              {text.institute}
-            </Typography>
-          </Box>
+          <Typography
+            variant="body2"
+            sx={{
+              mb: 3,
+              color: "text.secondary",
+              letterSpacing: 0.3,
+            }}
+          >
+            {text.institute}
+          </Typography>
 
           {/* DESARROLLADOR */}
           <Typography
@@ -271,11 +243,7 @@ export default function WelcomeScreen({
 
             <Typography
               variant="body2"
-              sx={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: 1,
-              }}
+              sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}
             >
               <CheckCircleIcon
                 fontSize="small"
@@ -287,11 +255,7 @@ export default function WelcomeScreen({
 
             <Typography
               variant="body2"
-              sx={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: 1,
-              }}
+              sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}
             >
               <TimerIcon
                 fontSize="small"
@@ -303,11 +267,7 @@ export default function WelcomeScreen({
 
             <Typography
               variant="body2"
-              sx={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: 1,
-              }}
+              sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}
             >
               <EmojiEventsIcon
                 fontSize="small"
@@ -323,10 +283,7 @@ export default function WelcomeScreen({
             <Typography variant="body2" fontWeight={600}>
               <BarChartIcon
                 fontSize="small"
-                sx={{
-                  verticalAlign: "middle",
-                  mr: 0.5,
-                }}
+                sx={{ verticalAlign: "middle", mr: 0.5 }}
               />
               {text.difficulty}
             </Typography>
@@ -410,4 +367,4 @@ export default function WelcomeScreen({
       </Card>
     </motion.div>
   );
-                }
+            }
