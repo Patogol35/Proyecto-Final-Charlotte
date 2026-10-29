@@ -1,0 +1,32 @@
+
+const es = {
+  language: "Español",
+  switchLanguage: "English 🇺🇸",
+  title: "Quiz Interactivo",
+  developedBy: "Desarrollado por",
+  instructions: "Instrucciones",
+  instructionsDescription: "Pon a prueba tus conocimientos con este cuestionario.",
+  randomQuestions: "Responde 20 preguntas al azar, a 0,5 puntos cada una.",
+  timePerQuestion: "Tiempo por pregunta:",
+  correctAnswerPoints: "Cada respuesta correcta suma 0,5 puntos.",
+  timeRunsOut: "Si se acaba el tiempo, la respuesta se marca como incorrecta.",
+  finalScoreRecord: "Al final verás tu puntaje.",
+  selectDifficulty: "Selecciona la dificultad:",
+  easy: "Fácil",
+  medium: "Medio",
+  hard: "Difícil",
+  start: "Comenzar",
+  question: "Pregunta",
+  points: "Puntos",
+  seconds: "s",
+  finished: "¡Quiz terminado!",
+  score: "Puntaje",
+  excellent: "¡Excelente trabajo! 🌟",
+  good: "¡Buen esfuerzo, sigue así! 💪",
+  tryAgain: "¡Sigue intentándolo, cada vez serás mejor!",
+  playAgain: "Volver a jugar",
+  second: "segundo",
+  timeLabel: "Tiempo",
+};
+
+export default es;
