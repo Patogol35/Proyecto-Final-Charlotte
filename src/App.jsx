@@ -1,18 +1,35 @@
+
 import { useState, useMemo, useEffect } from "react";
-import { ThemeProvider, createTheme, CssBaseline, Box } from "@mui/material";
+import {
+  ThemeProvider,
+  createTheme,
+  CssBaseline,
+  Box,
+} from "@mui/material";
 
 import WelcomeScreen from "./components/WelcomeScreen";
 import QuestionCard from "./components/QuestionCard";
 import ResultScreen from "./components/ResultScreen";
-import { questions as allQuestions } from "./data";
+
+import { questions as spanishQuestions } from "./data";
+import { questions as englishQuestions } from "./data/questions.en";
+
+import es from "./translations/es";
+import en from "./translations/en";
+
 import useQuiz from "./hooks/useQuiz";
 
 export default function App() {
   const [welcome, setWelcome] = useState(true);
   const [difficulty, setDifficulty] = useState("medium");
   const [darkMode, setDarkMode] = useState(false);
+  const [language, setLanguage] = useState("es");
 
-  // Hook centralizado
+  const t = language === "es" ? es : en;
+
+  const allQuestions =
+    language === "es" ? spanishQuestions : englishQuestions;
+
   const {
     questions,
     current,
@@ -26,17 +43,35 @@ export default function App() {
     restartQuiz,
   } = useQuiz(allQuestions, difficulty);
 
-  // Cargar preferencias desde localStorage
   useEffect(() => {
     const savedDark = localStorage.getItem("darkMode");
     const savedDiff = localStorage.getItem("difficulty");
-    if (savedDark) setDarkMode(JSON.parse(savedDark));
-    if (savedDiff) setDifficulty(savedDiff);
+    const savedLanguage = localStorage.getItem("language");
+
+    if (savedDark !== null) {
+      setDarkMode(JSON.parse(savedDark));
+    }
+
+    if (savedDiff) {
+      setDifficulty(savedDiff);
+    }
+
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
   }, []);
 
-  // Guardar preferencias
-  useEffect(() => localStorage.setItem("darkMode", darkMode), [darkMode]);
-  useEffect(() => localStorage.setItem("difficulty", difficulty), [difficulty]);
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  useEffect(() => {
+    localStorage.setItem("difficulty", difficulty);
+  }, [difficulty]);
+
+  useEffect(() => {
+    localStorage.setItem("language", language);
+  }, [language]);
 
   const theme = useMemo(
     () =>
@@ -56,8 +91,12 @@ export default function App() {
             secondary: darkMode ? "#94a3b8" : "#64748b",
           },
         },
-        typography: { fontFamily: "Roboto, sans-serif" },
-        shape: { borderRadius: 12 },
+        typography: {
+          fontFamily: "Roboto, sans-serif",
+        },
+        shape: {
+          borderRadius: 12,
+        },
       }),
     [darkMode]
   );
@@ -72,9 +111,16 @@ export default function App() {
     setWelcome(true);
   };
 
+  const handleLanguageChange = () => {
+    setLanguage((previous) =>
+      previous === "es" ? "en" : "es"
+    );
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
       <Box
         sx={{
           minHeight: "100vh",
@@ -95,7 +141,12 @@ export default function App() {
             setDifficulty={setDifficulty}
             difficulty={difficulty}
             darkMode={darkMode}
-            toggleDarkMode={() => setDarkMode((prev) => !prev)}
+            toggleDarkMode={() =>
+              setDarkMode((previous) => !previous)
+            }
+            language={language}
+            onLanguageChange={handleLanguageChange}
+            t={t}
           />
         ) : !finished ? (
           <QuestionCard
@@ -107,12 +158,14 @@ export default function App() {
             time={timeLeft}
             maxTime={maxTime}
             selected={selected}
+            t={t}
           />
         ) : (
           <ResultScreen
             score={score}
             total={questions.length}
             onRestart={handleRestart}
+            t={t}
           />
         )}
       </Box>
