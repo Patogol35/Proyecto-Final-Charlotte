@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -8,6 +9,7 @@ import {
   Box,
   LinearProgress,
 } from "@mui/material";
+
 import { motion } from "framer-motion";
 import { CheckCircle, Cancel } from "@mui/icons-material";
 
@@ -20,6 +22,7 @@ export default function QuestionCard({
   time,
   maxTime,
   selected,
+  t,
 }) {
   if (!question) return null;
 
@@ -47,47 +50,23 @@ export default function QuestionCard({
         }}
       >
         <CardContent>
-          {/* Progreso global */}
           <LinearProgress
             variant="determinate"
             value={progress}
-            sx={{
-              mb: 3,
-              height: 8,
-              borderRadius: 5,
-              backgroundColor: "rgba(0,0,0,0.1)",
-            }}
+            sx={{ mb: 3, height: 8, borderRadius: 5 }}
           />
 
-          {/* Contador y cronómetro centrados */}
           <Stack
-            direction="column"
             alignItems="center"
-            justifyContent="center"
             spacing={2}
             mb={4}
             sx={{ width: "100%" }}
           >
-            {/* Contador */}
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 600,
-                whiteSpace: "nowrap",
-                textAlign: "center",
-              }}
-            >
-              {current + 1} / {total}
+            <Typography variant="h6" fontWeight={600}>
+              {t.question} {current + 1} / {total}
             </Typography>
 
-            {/* Cronómetro */}
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                width: "100%",
-              }}
-            >
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
               <motion.div
                 animate={time <= 3 ? { scale: [1, 1.2, 1] } : {}}
                 transition={{ repeat: Infinity, duration: 1 }}
@@ -114,35 +93,24 @@ export default function QuestionCard({
                           : time > 3
                           ? "warning.main"
                           : "error.main",
-                      transition: "color 0.3s ease",
                     }}
                   />
+
                   <Typography
                     fontWeight="bold"
-                    sx={{
-                      color: "text.primary",
-                      fontSize: `${circleSize * 0.3}px`,
-                      lineHeight: 1,
-                      position: "absolute",
-                    }}
+                    sx={{ position: "absolute", lineHeight: 1 }}
                   >
-                    {time}s
+                    {time}{t.seconds}
                   </Typography>
                 </Box>
               </motion.div>
             </Box>
           </Stack>
 
-          {/* Pregunta */}
-          <Typography
-            variant="h5"
-            gutterBottom
-            sx={{ fontWeight: 600, mb: 3 }}
-          >
+          <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
             {question.question}
           </Typography>
 
-          {/* Opciones */}
           <Stack spacing={3} mt={2}>
             {question.options.map((opt, i) => {
               const isSelected = selected === opt;
@@ -150,7 +118,7 @@ export default function QuestionCard({
 
               return (
                 <motion.div
-                  key={i}
+                  key={`${current}-${i}`}
                   whileHover={!selected ? { scale: 1.03 } : {}}
                   whileTap={!selected ? { scale: 0.97 } : {}}
                   onClick={() => !selected && onAnswer(opt)}
@@ -158,7 +126,7 @@ export default function QuestionCard({
                 >
                   <Button
                     fullWidth
-                    disabled={!!selected && !isSelected}
+                    disabled={selected !== null && !isSelected}
                     variant={isSelected ? "contained" : "outlined"}
                     sx={{
                       textTransform: "none",
@@ -173,23 +141,13 @@ export default function QuestionCard({
                           : "error.main"
                         : "transparent",
                       color: isSelected ? "#fff" : "inherit",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        backgroundColor: isSelected
-                          ? isCorrect
-                            ? "success.dark"
-                            : "error.dark"
-                          : "rgba(37,99,235,0.1)",
-                      },
                     }}
                     endIcon={
-                      isSelected ? (
-                        isCorrect ? (
-                          <CheckCircle />
-                        ) : (
-                          <Cancel />
-                        )
-                      ) : null
+                      isSelected
+                        ? isCorrect
+                          ? <CheckCircle />
+                          : <Cancel />
+                        : null
                     }
                   >
                     {opt}
@@ -199,16 +157,15 @@ export default function QuestionCard({
             })}
           </Stack>
 
-          {/* Puntos */}
           <Typography
             variant="body2"
             align="right"
             sx={{ mt: 3, color: "text.secondary", fontWeight: 500 }}
           >
-            Puntos: {score}
+            {t.points}: {score}
           </Typography>
         </CardContent>
       </Card>
     </motion.div>
   );
-                      }
+}
