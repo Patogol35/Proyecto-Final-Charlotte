@@ -105,17 +105,14 @@ export default function WelcomeScreen({
           borderRadius: 4,
           background: (theme) =>
             theme.palette.mode === "dark"
-              ? "linear-gradient(145deg, #1e293b, #0f172a)"
-              : "linear-gradient(145deg, #ffffff, #f8fafc)",
+              ? "linear-gradient(145deg,#1e293b,#0f172a)"
+              : "linear-gradient(145deg,#ffffff,#f8fafc)",
           boxShadow:
-            "0 8px 25px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.05)",
+            "0 8px 25px rgba(0,0,0,0.15),0 4px 12px rgba(0,0,0,0.05)",
         }}
       >
         <CardContent
-          sx={{
-            p: { xs: 1, sm: 2 },
-            "&:last-child": { pb: 1 },
-          }}
+          sx={{ p: { xs: 1, sm: 2 }, "&:last-child": { pb: 1 } }}
         >
           {/* IDIOMA Y TEMA */}
           <Stack
@@ -173,7 +170,7 @@ export default function WelcomeScreen({
             fontWeight="bold"
             sx={{
               color: "#2563eb",
-              mb: 2,
+              mb: 1.5,
               fontSize: { xs: "1.8rem", sm: "2.125rem" },
             }}
           >
@@ -188,22 +185,20 @@ export default function WelcomeScreen({
               py: 2,
               borderRadius: 3,
               background: (theme) =>
-                theme.palette.mode === "dark"
-                  ? "rgba(37, 99, 235, 0.20)"
-                  : "#eaf2ff",
+                theme.palette.mode === "dark" ? "#263b5b" : "#e4efff",
               border: "1px solid",
               borderColor: (theme) =>
-                theme.palette.mode === "dark" ? "#3b5998" : "#bfdbfe",
+                theme.palette.mode === "dark" ? "#5476a8" : "#a8caff",
             }}
           >
             <Typography
               variant="subtitle1"
               fontWeight={800}
               sx={{
-                color: (theme) =>
-                  theme.palette.mode === "dark" ? "#93c5fd" : "#1d4ed8",
-                fontSize: { xs: "1rem", sm: "1.1rem" },
                 mb: 0.75,
+                fontSize: { xs: "1rem", sm: "1.1rem" },
+                color: (theme) =>
+                  theme.palette.mode === "dark" ? "#bfdbfe" : "#174ea6",
               }}
             >
               {text.project}
@@ -255,8 +250,8 @@ export default function WelcomeScreen({
               borderRadius: 3,
               background: (theme) =>
                 theme.palette.mode === "dark"
-                  ? "rgba(100, 116, 139, 0.15)"
-                  : "rgba(96, 165, 250, 0.08)",
+                  ? "rgba(100,116,139,0.15)"
+                  : "rgba(96,165,250,0.08)",
               border: "1px solid",
               borderColor: "divider",
             }}
@@ -415,4 +410,4 @@ export default function WelcomeScreen({
       </Card>
     </motion.div>
   );
-            }
+                }
