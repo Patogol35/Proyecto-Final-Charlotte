@@ -1,31 +1,41 @@
+
 import { useEffect } from "react";
-import { Card, CardContent, Typography, Button, Stack } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Button,
+  Stack,
+} from "@mui/material";
+
 import { motion } from "framer-motion";
 import ReplayIcon from "@mui/icons-material/Replay";
 import confetti from "canvas-confetti";
 
-export default function ResultScreen({ score, total, onRestart }) {
-  // Calcular porcentaje según puntaje real (0.5 por pregunta)
+export default function ResultScreen({ score, total, onRestart, t }) {
   const maxScore = total * 0.5;
-  const percent = (score / maxScore) * 100;
+  const percent = maxScore > 0 ? (score / maxScore) * 100 : 0;
 
-  // Mensajes de motivación
-  let message = "Sigue intentándolo, cada vez serás mejor!";
-  if (percent >= 80) message = "¡Excelente trabajo! 🌟";
-  else if (percent >= 50) message = "¡Buen esfuerzo, sigue así! 💪";
+  let message = t.tryAgain;
 
-  // 🎉 Efectos visuales según resultado
+  if (percent >= 80) {
+    message = t.excellent;
+  } else if (percent >= 50) {
+    message = t.good;
+  }
+
   useEffect(() => {
-    if (percent >= 80) {
-      // 🎉 Lluvia de confeti por 3s
-      const duration = 3000;
-      const end = Date.now() + duration;
+    let interval;
 
-      const interval = setInterval(() => {
+    if (percent >= 80) {
+      const end = Date.now() + 3000;
+
+      interval = setInterval(() => {
         if (Date.now() > end) {
           clearInterval(interval);
           return;
         }
+
         confetti({
           particleCount: 80,
           spread: 70,
@@ -33,7 +43,6 @@ export default function ResultScreen({ score, total, onRestart }) {
         });
       }, 300);
     } else if (percent >= 50) {
-      // 💥 Estallido colorido
       confetti({
         particleCount: 80,
         spread: 60,
@@ -41,26 +50,29 @@ export default function ResultScreen({ score, total, onRestart }) {
         origin: { y: 0.6 },
       });
     } else {
-      // 💧 Lluvia triste (gotitas azules desde arriba)
-      const duration = 2000;
-      const end = Date.now() + duration;
+      const end = Date.now() + 2000;
 
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         if (Date.now() > end) {
           clearInterval(interval);
           return;
         }
+
         confetti({
           particleCount: 15,
           angle: 90,
           spread: 20,
           startVelocity: 20,
           scalar: 1.2,
-          colors: ["#60a5fa", "#3b82f6", "#1e40af"], // tonos azul "lágrima"
+          colors: ["#60a5fa", "#3b82f6", "#1e40af"],
           origin: { x: Math.random(), y: 0 },
         });
       }, 250);
     }
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
   }, [percent]);
 
   return (
@@ -85,11 +97,11 @@ export default function ResultScreen({ score, total, onRestart }) {
       >
         <CardContent>
           <Typography variant="h4" fontWeight="bold" gutterBottom>
-            ¡Quiz Terminado!
+            {t.finished}
           </Typography>
 
           <Typography variant="h6" gutterBottom>
-            Puntaje: {score} / {maxScore}
+            {t.score}: {score} / {maxScore}
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 3 }}>
@@ -113,11 +125,11 @@ export default function ResultScreen({ score, total, onRestart }) {
                 },
               }}
             >
-              Volver a jugar
+              {t.playAgain}
             </Button>
           </Stack>
         </CardContent>
       </Card>
     </motion.div>
   );
-          }
+}
