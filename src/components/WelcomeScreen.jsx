@@ -1,4 +1,4 @@
-
+           
 import {
   Card,
   CardContent,
@@ -9,7 +9,6 @@ import {
   ToggleButtonGroup,
   IconButton,
   Box,
-  ButtonGroup,
 } from "@mui/material";
 
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -30,10 +29,34 @@ export default function WelcomeScreen({
   difficulty,
   darkMode,
   toggleDarkMode,
-  language,
-  setLanguage,
-  t,
+  language = "es",
+  setLanguage = () => {},
 }) {
+  const isEnglish = language === "en";
+
+  const text = {
+    title: isEnglish ? "Interactive Quiz" : "Quiz Interactivo",
+    developed: isEnglish ? "Developed by" : "Desarrollado por",
+    instructions: isEnglish ? "Instructions" : "Instrucciones",
+    questions: isEnglish
+      ? "Answer a total of 20 questions, worth 0.5 points each."
+      : "Responde un total de 20 preguntas, a 0.5 puntos cada una.",
+    time: isEnglish
+      ? "You have a time limit for each question."
+      : "Tienes un límite de tiempo para cada pregunta.",
+    points: isEnglish
+      ? "Earn points for each correct answer."
+      : "Gana puntos por cada respuesta correcta.",
+    difficulty: isEnglish
+      ? "Choose the difficulty before starting:"
+      : "Selecciona la dificultad:",
+    easy: isEnglish ? "Easy" : "Fácil",
+    medium: isEnglish ? "Medium" : "Medio",
+    hard: isEnglish ? "Hard" : "Difícil",
+    start: isEnglish ? "Start" : "Comenzar",
+    theme: isEnglish ? "Toggle theme" : "Cambiar tema",
+  };
+
   const colors = {
     easy: { main: "#16a34a", hover: "#15803d" },
     medium: { main: "#2563eb", hover: "#1d4ed8" },
@@ -41,9 +64,9 @@ export default function WelcomeScreen({
   };
 
   const levels = [
-    { value: "easy", label: t.easy },
-    { value: "medium", label: t.medium },
-    { value: "hard", label: t.hard },
+    { value: "easy", label: text.easy },
+    { value: "medium", label: text.medium },
+    { value: "hard", label: text.hard },
   ];
 
   return (
@@ -75,37 +98,25 @@ export default function WelcomeScreen({
             spacing={1}
             sx={{ mb: 2 }}
           >
-            <TranslateIcon
-              fontSize="small"
-              sx={{ color: "text.secondary" }}
-            />
+            <TranslateIcon fontSize="small" color="action" />
 
-            <ButtonGroup
+            <Button
               size="small"
-              variant="outlined"
-              aria-label="Language selector"
+              variant={language === "es" ? "contained" : "outlined"}
+              onClick={() => setLanguage("es")}
+              sx={{ minWidth: 48, fontWeight: 700 }}
             >
-              {["es", "en"].map((lang) => (
-                <Button
-                  key={lang}
-                  onClick={() => setLanguage(lang)}
-                  variant={language === lang ? "contained" : "outlined"}
-                  sx={{
-                    minWidth: 55,
-                    fontWeight: 800,
-                    borderRadius: 2,
-                    textTransform: "none",
-                    borderColor: "#2563eb",
-                    ...(language === lang && {
-                      backgroundColor: "#2563eb",
-                      color: "#fff",
-                    }),
-                  }}
-                >
-                  {lang.toUpperCase()}
-                </Button>
-              ))}
-            </ButtonGroup>
+              ES
+            </Button>
+
+            <Button
+              size="small"
+              variant={language === "en" ? "contained" : "outlined"}
+              onClick={() => setLanguage("en")}
+              sx={{ minWidth: 48, fontWeight: 700 }}
+            >
+              EN
+            </Button>
           </Stack>
 
           {/* TITULO + MODO OSCURO */}
@@ -121,19 +132,17 @@ export default function WelcomeScreen({
               fontWeight="bold"
               sx={{ color: "#2563eb" }}
             >
-              {t.title}
+              {text.title}
             </Typography>
 
             <IconButton
               onClick={toggleDarkMode}
               color="inherit"
-              aria-label={t.toggleTheme}
+              aria-label={text.theme}
               sx={{
                 border: "1px solid",
                 borderColor: (theme) =>
-                  theme.palette.mode === "dark"
-                    ? "#f1f5f9"
-                    : "#1e293b",
+                  theme.palette.mode === "dark" ? "#f1f5f9" : "#1e293b",
               }}
             >
               {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
@@ -150,7 +159,7 @@ export default function WelcomeScreen({
                 theme.palette.mode === "dark" ? "#cbd5f5" : "#334155",
             }}
           >
-            {t.developedBy}{" "}
+            {text.developed}{" "}
             <Box
               component="span"
               sx={{
@@ -165,7 +174,7 @@ export default function WelcomeScreen({
 
           {/* INSTRUCCIONES */}
           <Stack
-            spacing={1.5}
+            spacing={1}
             sx={{
               textAlign: "left",
               p: 3,
@@ -188,7 +197,7 @@ export default function WelcomeScreen({
               }}
             >
               <InfoIcon fontSize="small" />
-              {t.instructions}
+              {text.instructions}
             </Typography>
 
             <Typography
@@ -196,7 +205,7 @@ export default function WelcomeScreen({
               sx={{ display: "flex", alignItems: "center", gap: 1 }}
             >
               <CheckCircleIcon fontSize="small" color="success" />
-              <span>{t.questionsInfo}</span>
+              <span>{text.questions}</span>
             </Typography>
 
             <Typography
@@ -204,7 +213,7 @@ export default function WelcomeScreen({
               sx={{ display: "flex", alignItems: "center", gap: 1 }}
             >
               <TimerIcon fontSize="small" color="warning" />
-              {t.timeInfo}
+              {text.time}
             </Typography>
 
             <Typography
@@ -212,7 +221,7 @@ export default function WelcomeScreen({
               sx={{ display: "flex", alignItems: "center", gap: 1 }}
             >
               <EmojiEventsIcon fontSize="small" color="primary" />
-              {t.pointsInfo}
+              {text.points}
             </Typography>
 
             <Typography
@@ -220,14 +229,14 @@ export default function WelcomeScreen({
               sx={{ display: "flex", alignItems: "center", gap: 1 }}
             >
               <BarChartIcon fontSize="small" color="action" />
-              {t.difficultyInfo}
+              {text.difficulty}
             </Typography>
           </Stack>
 
           {/* SELECCION DE DIFICULTAD */}
           <Stack spacing={2} alignItems="center">
             <Typography variant="body2" fontWeight={600}>
-              {t.selectDifficulty}
+              {text.difficulty}
             </Typography>
 
             <Box
@@ -243,7 +252,6 @@ export default function WelcomeScreen({
                 onChange={(event, value) => {
                   if (value) setDifficulty(value);
                 }}
-                aria-label={t.selectDifficulty}
                 sx={{
                   width: "100%",
                   maxWidth: 360,
@@ -259,8 +267,7 @@ export default function WelcomeScreen({
                       fontWeight: 600,
                       borderRadius: 2,
                       textAlign: "center",
-                      color:
-                        difficulty === level.value ? "#fff" : "inherit",
+                      color: difficulty === level.value ? "#fff" : "inherit",
                       backgroundColor:
                         difficulty === level.value
                           ? colors[level.value].main
@@ -295,7 +302,7 @@ export default function WelcomeScreen({
                 textTransform: "none",
               }}
             >
-              {t.start}
+              {text.start}
             </Button>
           </Box>
         </CardContent>
@@ -303,3 +310,4 @@ export default function WelcomeScreen({
     </motion.div>
   );
 }
+     
