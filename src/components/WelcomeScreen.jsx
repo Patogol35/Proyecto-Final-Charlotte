@@ -1,4 +1,4 @@
-           
+
 import {
   Card,
   CardContent,
@@ -9,6 +9,7 @@ import {
   ToggleButtonGroup,
   IconButton,
   Box,
+  Tooltip,
 } from "@mui/material";
 
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -54,7 +55,13 @@ export default function WelcomeScreen({
     medium: isEnglish ? "Medium" : "Medio",
     hard: isEnglish ? "Hard" : "Difícil",
     start: isEnglish ? "Start" : "Comenzar",
-    theme: isEnglish ? "Toggle theme" : "Cambiar tema",
+    theme: isEnglish
+      ? darkMode
+        ? "Switch to light mode"
+        : "Switch to dark mode"
+      : darkMode
+        ? "Cambiar a modo claro"
+        : "Cambiar a modo oscuro",
   };
 
   const colors = {
@@ -78,7 +85,7 @@ export default function WelcomeScreen({
     >
       <Card
         sx={{
-          p: 4,
+          p: { xs: 2, sm: 4 },
           textAlign: "center",
           borderRadius: 4,
           background: (theme) =>
@@ -89,14 +96,14 @@ export default function WelcomeScreen({
             "0 8px 25px rgba(0,0,0,0.15),0 4px 12px rgba(0,0,0,0.05)",
         }}
       >
-        <CardContent>
-          {/* SELECTOR DE IDIOMA */}
+        <CardContent sx={{ p: { xs: 1, sm: 2 }, "&:last-child": { pb: 1 } }}>
+          {/* IDIOMA Y TEMA */}
           <Stack
             direction="row"
             justifyContent="flex-end"
             alignItems="center"
-            spacing={1}
-            sx={{ mb: 2 }}
+            spacing={0.5}
+            sx={{ mb: 3 }}
           >
             <TranslateIcon fontSize="small" color="action" />
 
@@ -104,7 +111,8 @@ export default function WelcomeScreen({
               size="small"
               variant={language === "es" ? "contained" : "outlined"}
               onClick={() => setLanguage("es")}
-              sx={{ minWidth: 48, fontWeight: 700 }}
+              sx={{ minWidth: 44, fontWeight: 700 }}
+              aria-label="Español"
             >
               ES
             </Button>
@@ -113,41 +121,46 @@ export default function WelcomeScreen({
               size="small"
               variant={language === "en" ? "contained" : "outlined"}
               onClick={() => setLanguage("en")}
-              sx={{ minWidth: 48, fontWeight: 700 }}
+              sx={{ minWidth: 44, fontWeight: 700 }}
+              aria-label="English"
             >
               EN
             </Button>
+
+            <Tooltip title={text.theme}>
+              <IconButton
+                onClick={toggleDarkMode}
+                color="primary"
+                aria-label={text.theme}
+                sx={{
+                  ml: 0.5,
+                  border: "1px solid",
+                  borderColor: "divider",
+                  width: 36,
+                  height: 36,
+                }}
+              >
+                {darkMode ? (
+                  <LightModeIcon fontSize="small" />
+                ) : (
+                  <DarkModeIcon fontSize="small" />
+                )}
+              </IconButton>
+            </Tooltip>
           </Stack>
 
-          {/* TITULO + MODO OSCURO */}
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-            spacing={2}
-            mb={2}
+          {/* TÍTULO */}
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            sx={{
+              color: "#2563eb",
+              mb: 2,
+              fontSize: { xs: "1.8rem", sm: "2.125rem" },
+            }}
           >
-            <Typography
-              variant="h4"
-              fontWeight="bold"
-              sx={{ color: "#2563eb" }}
-            >
-              {text.title}
-            </Typography>
-
-            <IconButton
-              onClick={toggleDarkMode}
-              color="inherit"
-              aria-label={text.theme}
-              sx={{
-                border: "1px solid",
-                borderColor: (theme) =>
-                  theme.palette.mode === "dark" ? "#f1f5f9" : "#1e293b",
-              }}
-            >
-              {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
-            </IconButton>
-          </Stack>
+            {text.title}
+          </Typography>
 
           {/* DESARROLLADOR */}
           <Typography
@@ -174,17 +187,18 @@ export default function WelcomeScreen({
 
           {/* INSTRUCCIONES */}
           <Stack
-            spacing={1}
+            spacing={1.5}
             sx={{
               textAlign: "left",
-              p: 3,
+              p: { xs: 2, sm: 3 },
               mb: 3,
               borderRadius: 3,
               background: (theme) =>
                 theme.palette.mode === "dark"
                   ? "rgba(100,116,139,0.15)"
                   : "rgba(96,165,250,0.08)",
-              border: "1px solid rgba(0,0,0,0.05)",
+              border: "1px solid",
+              borderColor: "divider",
             }}
           >
             <Typography
@@ -202,40 +216,48 @@ export default function WelcomeScreen({
 
             <Typography
               variant="body2"
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
+              sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}
             >
-              <CheckCircleIcon fontSize="small" color="success" />
-              <span>{text.questions}</span>
+              <CheckCircleIcon
+                fontSize="small"
+                color="success"
+                sx={{ flexShrink: 0 }}
+              />
+              {text.questions}
             </Typography>
 
             <Typography
               variant="body2"
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
+              sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}
             >
-              <TimerIcon fontSize="small" color="warning" />
+              <TimerIcon
+                fontSize="small"
+                color="warning"
+                sx={{ flexShrink: 0 }}
+              />
               {text.time}
             </Typography>
 
             <Typography
               variant="body2"
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
+              sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}
             >
-              <EmojiEventsIcon fontSize="small" color="primary" />
+              <EmojiEventsIcon
+                fontSize="small"
+                color="primary"
+                sx={{ flexShrink: 0 }}
+              />
               {text.points}
-            </Typography>
-
-            <Typography
-              variant="body2"
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
-            >
-              <BarChartIcon fontSize="small" color="action" />
-              {text.difficulty}
             </Typography>
           </Stack>
 
-          {/* SELECCION DE DIFICULTAD */}
+          {/* SELECCIÓN DE DIFICULTAD */}
           <Stack spacing={2} alignItems="center">
             <Typography variant="body2" fontWeight={600}>
+              <BarChartIcon
+                fontSize="small"
+                sx={{ verticalAlign: "middle", mr: 0.5 }}
+              />
               {text.difficulty}
             </Typography>
 
@@ -252,6 +274,7 @@ export default function WelcomeScreen({
                 onChange={(event, value) => {
                   if (value) setDifficulty(value);
                 }}
+                aria-label={text.difficulty}
                 sx={{
                   width: "100%",
                   maxWidth: 360,
@@ -267,7 +290,10 @@ export default function WelcomeScreen({
                       fontWeight: 600,
                       borderRadius: 2,
                       textAlign: "center",
-                      color: difficulty === level.value ? "#fff" : "inherit",
+                      color:
+                        difficulty === level.value
+                          ? "#fff"
+                          : "text.primary",
                       backgroundColor:
                         difficulty === level.value
                           ? colors[level.value].main
@@ -288,7 +314,7 @@ export default function WelcomeScreen({
             </Box>
           </Stack>
 
-          {/* BOTON COMENZAR */}
+          {/* BOTÓN COMENZAR */}
           <Box mt={4}>
             <Button
               variant="contained"
@@ -298,8 +324,13 @@ export default function WelcomeScreen({
                 px: 6,
                 py: 1.8,
                 fontSize: "1.1rem",
+                fontWeight: 600,
                 borderRadius: 3,
                 textTransform: "none",
+                boxShadow: "0 4px 12px rgba(37,99,235,0.25)",
+                "&:hover": {
+                  boxShadow: "0 6px 18px rgba(37,99,235,0.35)",
+                },
               }}
             >
               {text.start}
@@ -309,5 +340,5 @@ export default function WelcomeScreen({
       </Card>
     </motion.div>
   );
-}
-     
+                   }
+                         
