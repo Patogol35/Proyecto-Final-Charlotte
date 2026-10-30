@@ -76,4 +76,27 @@ export const questions = [
   { question: "Which emblematic church is located in downtown Ambato?", options: ["The Cathedral Church", "San Francisco Church", "Basilica of the National Vow", "La Merced Church"], answer: "The Cathedral Church" },
   { question: "Which park in Ambato is known for its rose garden and recreational areas?", options: ["Family Provincial Park", "Cevallos Park", "La Carolina Park", "Montalvo Park"], answer: "Family Provincial Park" },
   { question: "Which park in Ambato features a monument to Juan Montalvo and resting areas?", options: ["Montalvo Park", "Cevallos Park", "Family Provincial Park", "Flower Park"], answer: "Montalvo Park" },
+
+  // NEW ECUADOR QUESTIONS
+{ question: "How many provinces does Ecuador have?", options: ["22", "23", "24", "25"], answer: "24" },
+{ question: "On what date is Guayaquil's Independence Day celebrated?", options: ["August 10", "October 9", "May 24", "November 3"], answer: "October 9" },
+{ question: "What is the capital of Manabí Province?", options: ["Manta", "Chone", "Portoviejo", "Jipijapa"], answer: "Portoviejo" },
+{ question: "Which natural region of Ecuador consists of the Galápagos Islands?", options: ["Coast", "Highlands", "Amazon Region", "Insular Region"], answer: "Insular Region" },
+{ question: "In which city is the Middle of the World Monument located?", options: ["Quito", "Cuenca", "Riobamba", "Ibarra"], answer: "Quito" },
+{ question: "Which Ecuadorian president led the Liberal Revolution?", options: ["Juan José Flores", "Eloy Alfaro", "Gabriel García Moreno", "Vicente Rocafuerte"], answer: "Eloy Alfaro" },
+{ question: "What is the capital of Imbabura Province?", options: ["Otavalo", "Cotacachi", "Ibarra", "Atuntaqui"], answer: "Ibarra" },
+{ question: "Which Ecuadorian city is known as the Athens of Ecuador?", options: ["Loja", "Cuenca", "Quito", "Riobamba"], answer: "Cuenca" },
+{ question: "On what date is Cuenca's Independence Day celebrated?", options: ["November 3", "October 9", "May 24", "August 10"], answer: "November 3" },
+{ question: "Which traditional Ecuadorian export product is famous worldwide?", options: ["Coffee", "Cacao", "Bananas", "Rice"], answer: "Bananas" },
+  // NEW AMBATO QUESTIONS
+{ question: "In what year was the Festival of Fruits and Flowers first celebrated?", options: ["1949", "1951", "1955", "1960"], answer: "1951" },
+{ question: "Which historic estate belonged to the writer Juan León Mera?", options: ["Quinta de Atocha", "Quinta La Liria", "Quinta de Montalvo", "Quinta El Rosario"], answer: "Quinta de Atocha" },
+{ question: "What is the name of Ambato's airport?", options: ["Chachoán Airport", "Mariscal Sucre Airport", "Eloy Alfaro Airport", "Cotopaxi Airport"], answer: "Chachoán Airport" },
+{ question: "Which rural parish of Ambato is known for its flower production?", options: ["Quisapincha", "Izamba", "Atocha", "Pinllo"], answer: "Izamba" },
+{ question: "Which writer from Ambato authored the novel Cumandá?", options: ["Juan Montalvo", "Juan León Mera", "Pedro Fermín Cevallos", "Luis A. Martínez"], answer: "Juan León Mera" },
+{ question: "Which tourist attraction in Ambato preserves important historical and cultural collections?", options: ["Juan Montalvo House Museum", "Central Bank Museum", "Quito City Museum", "Pumapungo Museum"], answer: "Juan Montalvo House Museum" },
+{ question: "Which parish of Ambato is famous for its traditional chicken dishes and bread?", options: ["Pinllo", "Izamba", "Huachi Grande", "Santa Rosa"], answer: "Pinllo" },
+{ question: "Which writer from Ambato wrote the novel A la costa?", options: ["Juan León Mera", "Luis A. Martínez", "Juan Montalvo", "Pedro Fermín Cevallos"], answer: "Luis A. Martínez" },
+{ question: "Which province has Ambato as its capital?", options: ["Cotopaxi", "Chimborazo", "Tungurahua", "Pastaza"], answer: "Tungurahua" },
+{ question: "Which tourist attraction is located in the Atocha parish of Ambato?", options: ["Quinta de Mera", "La Carolina Park", "Colta Lagoon", "Quinta Bolívar"], answer: "Quinta de Mera" },
 ];
