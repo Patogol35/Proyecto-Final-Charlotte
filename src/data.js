@@ -4,13 +4,13 @@ export const questions = [
   { question: "¿Cuál es la moneda oficial de Ecuador?", options: ["Dólar estadounidense", "Sucre", "Peso", "Euro"], answer: "Dólar estadounidense" },
   { question: "¿Qué ciudad ecuatoriana es conocida como la 'Ciudad de las Flores y las Frutas'?", options: ["Quito", "Ambato", "Guayaquil", "Loja"], answer: "Ambato" },
   { question: "¿Cuál es el volcán más alto de Ecuador?", options: ["Cotopaxi", "Chimborazo", "Tungurahua", "Pichincha"], answer: "Chimborazo" },
-  { question: "¿Qué río es el más largo de Ecuador?", options: ["Río Guayas", "Río Napo", "Río Pastaza", "Río Esmeraldas"], answer: "Río Napo" },
+  {question: "¿Cuál es uno de los principales ríos de la región amazónica ecuatoriana?", options: ["Río Guayas", "Río Napo", "Río Pastaza", "Río Esmeraldas"], answer: "Río Napo" },
   { question: "¿Cuál es la bebida típica ecuatoriana hecha de maíz fermentado?", options: ["Colada Morada", "Chicha de jora", "Canelazo", "Guayusa"], answer: "Chicha de jora" },
   { question: "¿Qué país limita al norte con Ecuador?", options: ["Colombia", "Perú", "Brasil", "Venezuela"], answer: "Colombia" },
-  { question: "¿Qué país limita al sur con Ecuador?", options: ["Perú", "Chile", "Brasil", "Colombia"], answer: "Perú" },
-  { question: "¿Qué famoso pintor ecuatoriano nació en Guayaquil?", options: ["Oswaldo Guayasamín", "Eduardo Kingman", "Manuel Rendón", "Camilo Egas"], answer: "Manuel Rendón" },
-  { question: "¿Qué ciudad es conocida como la 'Sultana del Oriente'?", options: ["Loja", "Tena", "Macas", "Puyo"], answer: "Tena" },
-  { question: "¿Cuál es el plato típico ecuatoriano a base de pescado frito y patacones?", options: ["Ceviche", "Seco de gallina", "Fanesca", "Encocado"], answer: "Encocado" },
+  { question: "¿Qué país limita al sur con Ecuador?", options: ["Perú", "Chile", "Brasil", "Colombia"], answer: "Perú" },  
+  { question: "¿En qué ciudad nació el pintor ecuatoriano Manuel Rendón Seminario?", options: ["Guayaquil", "Quito", "París", "Cuenca"], answer: "París" },
+  { question: "¿Qué ciudad ecuatoriana es conocida como la Sultana del Oriente?", options: ["Loja", "Tena", "Macas", "Puyo"], answer: "Macas" },
+  { question: "¿Qué plato típico ecuatoriano se prepara con pescado o mariscos en salsa de coco?", options: ["Ceviche", "Seco de gallina", "Fanesca", "Encocado"], answer: "Encocado" },
   { question: "¿Qué mar baña la costa de Ecuador?", options: ["Océano Atlántico", "Océano Pacífico", "Mar Caribe", "Mar del Norte"], answer: "Océano Pacífico" },
   { question: "¿Qué parque nacional es famoso por sus lobos marinos y tortugas?", options: ["Galápagos", "Cajas", "Yasuní", "Sumaco"], answer: "Galápagos" },
   { question: "¿En qué año se proclamó la independencia de Quito?", options: ["1809", "1822", "1830", "1810"], answer: "1809" },
@@ -28,7 +28,6 @@ export const questions = [
   { question: "¿Cómo se llamaba el famoso dúo musical conformado por Gonzalo Benítez y Luis Alberto Valencia?", options: ["Los Reales", "Benítez y Valencia", "Los Brillantes", "Los Hermanos Miño Naranjo"], answer: "Benítez y Valencia" },
   { question: "¿Qué cantante guayaquileño es conocido como 'El Ruiseñor de América'?", options: ["Carlota Jaramillo", "Julio Jaramillo", "Olga Gutiérrez", "Segundo Rosero"], answer: "Julio Jaramillo" },
   { question: "¿Qué instrumento musical es muy característico en los sanjuanitos ecuatorianos?", options: ["Guitarra", "Rondador", "Violín", "Charango"], answer: "Rondador" },
-  
   { question: "¿Qué cantante ecuatoriana es conocida como 'La Reina del Pasillo'?", options: ["Olga Gutiérrez", "Carlota Jaramillo", "Paulina Tamayo", "Rosa Guraieb"], answer: "Carlota Jaramillo" },
   { question: "¿Qué compositor ecuatoriano escribió la canción 'Guayaquil de mis amores'?", options: ["Nicasio Safadi", "Carlos Rubira Infante", "Luis Humberto Salgado", "Jorge Humberto Benítez"], answer: "Nicasio Safadi" },
   { question: "¿En qué provincia nació el compositor Carlos Rubira Infante?", options: ["Pichincha", "Guayas", "Manabí", "Azuay"], answer: "Guayas" },
@@ -37,7 +36,15 @@ export const questions = [
   // 🔹 PREGUNTAS ADICIONALES DE ECUADOR
   { question: "¿Cuál es la provincia más grande de Ecuador en extensión territorial?", options: ["Pastaza", "Guayas", "Orellana", "Manabí"], answer: "Pastaza" },
   { question: "¿Qué isla es la más grande del archipiélago de Galápagos?", options: ["Isabela", "Santa Cruz", "San Cristóbal", "Floreana"], answer: "Isabela" },
-  { question: "¿En qué provincia se encuentra el Parque Nacional Yasuní?", options: ["Orellana", "Sucumbíos", "Pastaza", "Napo"], answer: "Orellana" },
+  
+  { question: "¿En qué dos provincias se encuentra el Parque Nacional Yasuní?", options: [
+    "Orellana y Pastaza",
+    "Sucumbíos y Napo",
+    "Pichincha y Cotopaxi",
+    "Manabí y Esmeraldas"
+  ],
+  answer: "Orellana y Pastaza"
+},
   { question: "¿Qué línea imaginaria atraviesa Ecuador?", options: ["Trópico de Capricornio", "Trópico de Cáncer", "Ecuador", "Meridiano de Greenwich"], answer: "Ecuador" },
   { question: "¿Cuál es el pico más alto medido desde el centro de la Tierra?", options: ["Everest", "Cotopaxi", "Chimborazo", "Antisana"], answer: "Chimborazo" },
   { question: "¿Qué ciudad ecuatoriana es conocida como la 'Capital Mundial del Banano'?", options: ["Machala", "Babahoyo", "Portoviejo", "Quevedo"], answer: "Machala" },
@@ -48,16 +55,27 @@ export const questions = [
 
   // PREGUNTAS DE AMBATO
   { question: "¿Qué volcán se encuentra cerca de Ambato?", options: ["Cotopaxi", "Chimborazo", "Pichincha", "Tungurahua"], answer: "Tungurahua" },
-  { question: "¿Qué bebida tradicional se encuentra en Ambato durante todo el año?", options: ["Canelazo", "Chicha de jora", "Colada morada", "Aguapanela"], answer: "Colada morada" },
+  
+  { question: "¿Qué bebida tradicional se puede encontrar en Atocha durante todo el año?", options: ["Canelazo", "Chicha de jora", "Colada morada", "Aguapanela"], answer: "Colada morada" },
   { question: "¿Qué río pasa por Ambato?", options: ["Río Guayas", "Río Ambato", "Río Pastaza", "Río Esmeraldas"], answer: "Río Ambato" },
   { question: "¿Cuál es el plato típico de Ambato?", options: ["Fanesca", "Llapingacho", "Cuy asado", "Humitas"], answer: "Llapingacho" },
   { question: "¿Qué fiesta es famosa en Ambato?", options: ["Fiesta de Guayaquil", "Fiesta de las frutas y de las flores", "Inti Raymi", "Feria de Quito"], answer: "Fiesta de las frutas y de las flores" },
   { question: "¿En qué provincia está ubicada Ambato?", options: ["Pichincha", "Tungurahua", "Cotopaxi", "Imbabura"], answer: "Tungurahua" },
   { question: "¿Qué parque es famoso en Ambato?", options: ["Parque Cevallos", "Parque La Carolina", "Parque Metropolitano", "Parque El Ejido"], answer: "Parque Cevallos" },
   { question: "¿Qué fruta es muy representativa de Ambato?", options: ["Banano", "Manzana", "Naranja", "Piña"], answer: "Manzana" },
+  { question: "¿Qué actividad productiva ha dado fama a Ambato como la Tierra de las Flores y las Frutas?", options: ["Producción frutícola y agrícola", "Pesca artesanal", "Minería", "Producción petrolera"], answer: "Producción frutícola y agrícola" },
   { question: "¿Qué famoso escritor nació en Ambato?", options: ["Juan Montalvo", "Eloy Alfaro", "Jorge Icaza", "Oswaldo Guayasamín"], answer: "Juan Montalvo" },
   { question: "¿Qué avenida principal cruza Ambato?", options: ["Avenida Cevallos", "Avenida Amazonas", "Avenida 10 de Agosto", "Avenida América"], answer: "Avenida Cevallos" },
-  { question: "¿Cuál es la principal festividad religiosa de Ambato?", options: ["Semana Santa", "Corpus Christi", "Fiesta de la Virgen de la Merced", "Inti Raymi"], answer: "Fiesta de la Virgen de la Merced" },
+  
+  { question: "¿Quién es la patrona de la Diócesis de Ambato?",
+  options: [
+    "Nuestra Señora de la Elevación",
+    "Virgen de la Merced",
+    "Virgen del Cisne",
+    "Virgen del Quinche"
+  ],
+  answer: "Nuestra Señora de la Elevación"
+},
   { question: "¿Qué museo es destacado en Ambato?", options: ["Museo Casa de Montalvo", "Museo Nacional", "Museo Tumbaco", "Museo Guayasamín"], answer: "Museo Casa de Montalvo" },
   { question: "¿Qué poeta y escritor ambateño es considerado uno de los mejores de Ecuador?", options: ["Juan Montalvo", "Juan León Mera", "Jorge Icaza", "Benjamín Carrión"], answer: "Juan León Mera" },
   { question: "¿Qué himno escribió Juan León Mera, oriundo de Ambato?", options: ["Himno Nacional del Ecuador", "Himno de Quito", "Himno de Guayaquil", "Himno de Cuenca"], answer: "Himno Nacional del Ecuador" },
@@ -74,16 +92,23 @@ export const questions = [
   { question: "¿Cuál es una de las obras más famosas de Juan León Mera?", options: ["Cumandá", "La Vorágine", "Huasipungo", "María"], answer: "Cumandá" },
   { question: "¿En qué ciudad ecuatoriana nació Juan León Mera?", options: ["Ambato", "Quito", "Guayaquil", "Loja"], answer: "Ambato" },
   { question: "¿Qué iglesia emblemática se encuentra en el centro de Ambato?", options: ["Iglesia La Catedral", "Iglesia de San Francisco", "Basílica del Voto Nacional", "Iglesia de La Merced"], answer: "Iglesia La Catedral" },
-  { question: "¿Qué parque de Ambato es conocido por su rosaleda y áreas recreativas?", 
-    options: ["Parque Provincial de la Familia", "Parque Cevallos", "Parque La Carolina", "Parque Montalvo"], 
-    answer: "Parque Provincial de la Familia" 
-  },
+  
+   {
+  question: "¿Qué parque de Tungurahua cuenta con huertos, jardines, lagunas y zonas recreativas?",
+  options: [
+    "Parque Provincial de la Familia",
+    "Parque Cevallos",
+    "Parque La Carolina",
+    "Parque Montalvo"
+  ],
+  answer: "Parque Provincial de la Familia"
+},
+    
   { 
     question: "¿Qué parque de Ambato cuenta con un monumento a Juan Montalvo y áreas de descanso?", 
     options: ["Parque Montalvo", "Parque Cevallos", "Parque Provincial de la Familia", "Parque de las Flores"], 
     answer: "Parque Montalvo" 
   },
-
   // NUEVAS PREGUNTAS DE ECUADOR
 { question: "¿Cuántas provincias tiene Ecuador?", options: ["22", "23", "24", "25"], answer: "24" },
 { question: "¿En qué fecha se celebra la independencia de Guayaquil?", options: ["10 de agosto", "9 de octubre", "24 de mayo", "3 de noviembre"], answer: "9 de octubre" },
@@ -107,4 +132,101 @@ export const questions = [
 { question: "¿Qué escritor ambateño escribió la novela A la costa?", options: ["Juan León Mera", "Luis A. Martínez", "Juan Montalvo", "Pedro Fermín Cevallos"], answer: "Luis A. Martínez" },
 { question: "¿Qué provincia tiene como capital a Ambato?", options: ["Cotopaxi", "Chimborazo", "Tungurahua", "Pastaza"], answer: "Tungurahua" },
 { question: "¿Qué lugar turístico de Ambato se encuentra en la parroquia Atocha?", options: ["Quinta de Mera", "Parque La Carolina", "Laguna de Colta", "Quinta Bolívar"], answer: "Quinta de Mera" },
+
+  
+  // 🔹 NUEVAS PREGUNTAS DE AMBATO
+  { question: "¿En qué fecha se celebra la independencia de Ambato?", options: ["12 de noviembre", "10 de agosto", "24 de mayo", "9 de octubre"], answer: "12 de noviembre" },
+  { question: "¿Cómo se conoce a Ambato por sus tres personajes ilustres llamados Juan?", options: ["Cuna de los Tres Juanes", "Ciudad de los Poetas", "Capital de la Cultura", "Tierra de los Libertadores"], answer: "Cuna de los Tres Juanes" },
+  { question: "¿Cuáles son los tres Juanes de Ambato?", options: ["Juan Montalvo, Juan León Mera y Juan Benigno Vela", "Juan Montalvo, Juan José Flores y Juan León Mera", "Juan Benigno Vela, Juan José Flores y Juan León Mera", "Juan León Mera, Juan Pío Montúfar y Juan Montalvo"], answer: "Juan Montalvo, Juan León Mera y Juan Benigno Vela" },
+  { question: "¿Qué escritor ambateño fue conocido por sus ideas liberales y sus críticas políticas?", options: ["Juan Montalvo", "Juan León Mera", "Luis A. Martínez", "Pedro Fermín Cevallos"], answer: "Juan Montalvo" },
+  { question: "¿Qué personaje ambateño fue político y periodista, y formó parte de los Tres Juanes?", options: ["Juan Benigno Vela", "Eloy Alfaro", "Pedro Fermín Cevallos", "Luis A. Martínez"], answer: "Juan Benigno Vela" },
+  { question: "¿Qué novela escribió Luis A. Martínez?", options: ["A la costa", "Cumandá", "Las Catilinarias", "El chulla Romero y Flores"], answer: "A la costa" },
+  { question: "¿Qué acontecimiento natural destruyó gran parte de Ambato en 1949?", options: ["Un terremoto", "Una inundación", "Una erupción volcánica", "Un deslizamiento"], answer: "Un terremoto" },
+  { question: "¿Qué fecha recuerda el terremoto de Ambato de 1949?", options: ["5 de agosto", "12 de noviembre", "24 de agosto", "20 de junio"], answer: "5 de agosto" },
+  { question: "¿Qué representa la Fiesta de la Fruta y de las Flores para los ambateños?", options: ["La reconstrucción y el renacimiento de la ciudad", "La fundación de la provincia", "La independencia de Ecuador", "La celebración de la cosecha de cacao"], answer: "La reconstrucción y el renacimiento de la ciudad" },
+  { question: "¿En qué sector de Ambato se encuentra el Jardín Botánico Atocha-La Liria?", options: ["Atocha", "Huachi Chico", "Picaihua", "Izamba"], answer: "Atocha" },
+  { question: "¿Qué importante escritor ecuatoriano vivió en la Quinta de Atocha?", options: ["Juan León Mera", "Juan Montalvo", "Luis A. Martínez", "Juan Benigno Vela"], answer: "Juan León Mera" },
+  { question: "¿Qué escritor nació en la casa donde actualmente funciona la Casa Museo Juan Montalvo?", options: ["Juan Montalvo", "Juan León Mera", "Luis A. Martínez", "Juan Benigno Vela"], answer: "Juan Montalvo" },
+  { question: "¿Qué edificio patrimonial de Ambato es conocido como la Casa del Portal?", options: ["Casa del Portal", "Quinta de Mera", "Casa de Montalvo", "Casa de la Cultura"], answer: "Casa del Portal" },
+  { question: "¿Qué parque de Ambato antiguamente era conocido como plaza de San Bartolomé?", options: ["Parque Cevallos", "Parque Montalvo", "Parque 12 de Noviembre", "Parque de las Flores"], answer: "Parque Cevallos" },
+  { question: "¿Qué parque de Ambato se encuentra frente a la Catedral y tiene un monumento a Juan Montalvo?", options: ["Parque Montalvo", "Parque Cevallos", "Parque de la Familia", "Parque 12 de Noviembre"], answer: "Parque Montalvo" },
+  { question: "¿En qué parroquia ambateña es tradicional la preparación y venta de colada morada?", options: ["Atocha", "Picaihua", "Quisapincha", "Totoras"], answer: "Atocha" },
+  { question: "¿Qué alimento tradicional es especialmente famoso en la parroquia Pinllo?", options: ["Pan de Pinllo", "Tigrillo", "Bolón de verde", "Tortillas de tiesto de Cayambe"], answer: "Pan de Pinllo" },
+  { question: "¿Qué preparación gastronómica es famosa en Pinllo y suele acompañarse con papas?", options: ["Gallinas de Pinllo", "Fritada de Atuntaqui", "Hornado de Riobamba", "Cuy de Loja"], answer: "Gallinas de Pinllo" },
+  { question: "¿Qué parroquia rural de Ambato es reconocida por sus artículos de cuero?", options: ["Quisapincha", "Izamba", "Totoras", "Cunchibamba"], answer: "Quisapincha" },
+  { question: "¿Qué parroquia rural de Ambato es conocida por su tradición artesanal y sus guitarras?", options: ["Pasa", "Izamba", "Picaihua", "Unamuncho"], answer: "Pasa" },
+  { question: "¿Qué parroquia rural de Ambato es reconocida por su producción agrícola y frutícola?", options: ["Huachi Grande", "La Merced", "San Francisco", "La Matriz"], answer: "Huachi Grande" },
+  { question: "¿Qué parroquia rural de Ambato lleva el nombre de uno de los Tres Juanes?", options: ["Juan Benigno Vela", "Atocha", "Ficoa", "La Península"], answer: "Juan Benigno Vela" },
+  { question: "¿Qué parroquia de Ambato es conocida por su producción de flores y actividad agrícola?", options: ["Izamba", "La Merced", "San Francisco", "Ficoa"], answer: "Izamba" },
+  { question: "¿Qué río atraviesa el territorio de Ambato?", options: ["Río Ambato", "Río Guayas", "Río Napo", "Río Esmeraldas"], answer: "Río Ambato" },
+  { question: "¿Qué volcán lleva el mismo nombre de la provincia cuya capital es Ambato?", options: ["Tungurahua", "Cotopaxi", "Sangay", "Cayambe"], answer: "Tungurahua" },
+  { question: "¿Qué estadio es el principal escenario de fútbol profesional de Ambato?", options: ["Estadio Bellavista", "Estadio Rodrigo Paz Delgado", "Estadio Olímpico Atahualpa", "Estadio George Capwell"], answer: "Estadio Bellavista" },
+  { question: "¿Qué equipo de fútbol ambateño es conocido como el Ídolo de Ambato?", options: ["Macará", "Técnico Universitario", "Mushuc Runa", "Olmedo"], answer: "Macará" },
+  { question: "¿Qué equipo de fútbol de Ambato es conocido como el Rodillo Rojo?", options: ["Técnico Universitario", "Macará", "Barcelona SC", "Deportivo Cuenca"], answer: "Técnico Universitario" },
+  { question: "¿Qué colores identifican tradicionalmente al Club Social y Deportivo Macará?", options: ["Celeste y blanco", "Rojo y blanco", "Amarillo y negro", "Verde y blanco"], answer: "Celeste y blanco" },
+  { question: "¿Qué colores identifican tradicionalmente a Técnico Universitario?", options: ["Rojo y blanco", "Celeste y blanco", "Azul y amarillo", "Verde y negro"], answer: "Rojo y blanco" },
+  
+  // 🇪🇨 NUEVAS PREGUNTAS DE CULTURA GENERAL DE ECUADOR
+
+  { question: "¿Cuál es la capital de la provincia de Santo Domingo de los Tsáchilas?", options: ["Quevedo", "Santo Domingo", "Esmeraldas", "Babahoyo"], answer: "Santo Domingo" },
+  { question: "¿Qué ciudad ecuatoriana es conocida como la Perla del Pacífico?", options: ["Manta", "Guayaquil", "Salinas", "Esmeraldas"], answer: "Guayaquil" },
+  { question: "¿Cuál es la capital de la provincia de El Oro?", options: ["Machala", "Santa Rosa", "Huaquillas", "Pasaje"], answer: "Machala" },
+  { question: "¿En qué provincia se encuentra la ciudad de Otavalo?", options: ["Pichincha", "Imbabura", "Carchi", "Cotopaxi"], answer: "Imbabura" },
+  { question: "¿Qué ciudad ecuatoriana es famosa por sus sombreros de paja toquilla?", options: ["Montecristi", "Riobamba", "Tulcán", "Latacunga"], answer: "Montecristi" },
+  { question: "¿En qué provincia se encuentra el volcán Quilotoa?", options: ["Tungurahua", "Cotopaxi", "Chimborazo", "Pichincha"], answer: "Cotopaxi" },
+  { question: "¿Cuál es la capital de la provincia de Carchi?", options: ["Tulcán", "Ibarra", "Otavalo", "San Gabriel"], answer: "Tulcán" },
+  { question: "¿Qué ciudad ecuatoriana es conocida por su tradicional Fiesta de la Mama Negra?", options: ["Ambato", "Latacunga", "Riobamba", "Guaranda"], answer: "Latacunga" },
+  { question: "¿En qué provincia se encuentra el Parque Nacional Cajas?", options: ["Azuay", "Loja", "Cañar", "Chimborazo"], answer: "Azuay" },
+  { question: "¿Cuál es la capital de la provincia de Sucumbíos?", options: ["Lago Agrio", "Tena", "Puyo", "Macas"], answer: "Lago Agrio" },
+
+  { question: "¿Qué cultura precolombina construyó importantes asentamientos en la isla de La Tolita?", options: ["Valdivia", "La Tolita", "Machalilla", "Cañari"], answer: "La Tolita" },
+  { question: "¿Qué cultura precolombina es reconocida por sus antiguas figuras de cerámica femenina?", options: ["Valdivia", "Inca", "Cañari", "Quitu"], answer: "Valdivia" },
+  { question: "¿En qué año se fundó oficialmente la República del Ecuador?", options: ["1822", "1830", "1835", "1845"], answer: "1830" },
+  { question: "¿Qué prócer ecuatoriano fue conocido como el Mariscal de Ayacucho?", options: ["Antonio José de Sucre", "Eloy Alfaro", "Juan José Flores", "Vicente Rocafuerte"], answer: "Antonio José de Sucre" },
+  { question: "¿Qué presidente ecuatoriano fue conocido como el Gran Constructor?", options: ["Gabriel García Moreno", "Eloy Alfaro", "Jaime Roldós", "José María Velasco Ibarra"], answer: "Gabriel García Moreno" },
+  { question: "¿Qué ciudad fue la sede de la primera Constitución del Ecuador?", options: ["Quito", "Guayaquil", "Riobamba", "Cuenca"], answer: "Riobamba" },
+  { question: "¿Qué fecha se conmemora la Batalla de Pichincha?", options: ["24 de mayo", "10 de agosto", "9 de octubre", "3 de noviembre"], answer: "24 de mayo" },
+  { question: "¿Quién fue el autor de la letra del Himno Nacional del Ecuador?", options: ["Juan León Mera", "Juan Montalvo", "Eloy Alfaro", "José Joaquín de Olmedo"], answer: "Juan León Mera" },
+  { question: "¿Quién compuso la música del Himno Nacional del Ecuador?", options: ["Antonio Neumane", "Luis Humberto Salgado", "Segundo Cueva Celi", "Nicasio Safadi"], answer: "Antonio Neumane" },
+  { question: "¿Qué ciudad ecuatoriana fue fundada por los españoles el 6 de diciembre de 1534?", options: ["Quito", "Cuenca", "Loja", "Portoviejo"], answer: "Quito" },
+
+  { question: "¿Cuál es el plato típico de la provincia de Manabí preparado con plátano verde y maní?", options: ["Viche", "Fanesca", "Yahuarlocro", "Locro de papa"], answer: "Viche" },
+  { question: "¿Qué plato tradicional ecuatoriano se prepara con papas y queso y suele servirse con aguacate?", options: ["Locro de papa", "Encebollado", "Guatita", "Seco de chivo"], answer: "Locro de papa" },
+  { question: "¿Qué provincia ecuatoriana es especialmente conocida por sus deliciosos ceviches de camarón?", options: ["Manabí", "Carchi", "Bolívar", "Cañar"], answer: "Manabí" },
+  { question: "¿Qué ingrediente principal se utiliza para preparar el encebollado ecuatoriano?", options: ["Atún", "Pollo", "Carne de res", "Cerdo"], answer: "Atún" },
+  { question: "¿Qué dulce tradicional ecuatoriano se prepara con leche y azúcar?", options: ["Manjar de leche", "Colada morada", "Espumilla", "Pristiños"], answer: "Manjar de leche" },
+
+  { question: "¿Qué reserva ecuatoriana es conocida por proteger una gran diversidad de aves?", options: ["Reserva Ecológica Antisana", "Parque Samanes", "Parque La Carolina", "Parque El Ejido"], answer: "Reserva Ecológica Antisana" },
+  { question: "¿Qué animal es representativo de la fauna de Galápagos y puede vivir más de 100 años?", options: ["Tortuga gigante", "Cóndor andino", "Oso de anteojos", "Tapir amazónico"], answer: "Tortuga gigante" },
+  { question: "¿Cuál es el ave nacional de Ecuador?", options: ["Cóndor andino", "Papagayo", "Colibrí", "Águila harpía"], answer: "Cóndor andino" },
+  { question: "¿Qué mamífero andino está representado en el escudo nacional de Ecuador?", options: ["Llama", "Oso de anteojos", "Venado", "Cóndor"], answer: "Cóndor" },
+  { question: "¿Qué científico visitó Ecuador y estudió las especies de las islas Galápagos?", options: ["Charles Darwin", "Albert Einstein", "Isaac Newton", "Alexander Fleming"], answer: "Charles Darwin" },
+  { question: "¿En qué deporte Ecuador consiguió su primera medalla de oro olímpica?", options: ["Marcha atlética", "Fútbol", "Boxeo", "Levantamiento de pesas"], answer: "Marcha atlética" },
+                                                                                                                  
+  
+  // 🎵 ARTISTAS Y MÚSICA ECUATORIANA
+
+
+  { question: "¿Qué cantante ecuatoriano es conocido por interpretar el tema Chica Linda?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Widinson"], answer: "Segundo Rosero" },
+  { question: "¿Qué cantante ecuatoriana es conocida como La Grande del Ecuador?", options: ["Paulina Tamayo", "Margarita Laso", "Silvana Ibarra", "Karina Clavijo"], answer: "Paulina Tamayo" },
+  { question: "¿Qué artista ecuatoriano es conocido por la canción El aguacate?", options: ["César Guerrero Tamayo", "Julio Jaramillo", "Carlos Rubira Infante", "Segundo Cueva Celi"], answer: "Cesar Guerrero Tamayo" },
+  { question: "¿Qué cantante ecuatoriano interpreta el tema En vida?", options: ["Edhisson", "Gerardo Morán", "Fausto Miño", "Daniel Páez"], answer: "Gerardo Morán" },
+  { question: "¿Qué cantante ecuatoriano popularizó la canción El más querido?", options: ["Gerardo Morán", "Widinson", "Segundo Rosero", "Héctor Jaramillo"], answer: "Widinson" },
+  { question: "¿Qué cantante ecuatoriano alcanzó popularidad internacional con la canción Chao Lola?", options: ["Fausto Miño", "Juan Fernando Velasco", "Daniel Betancourth", "Jorge Luis del Hierro"], answer: "Juan Fernando Velasco" },
+  { question: "¿Qué cantante ecuatoriano interpretó la canción Para que no me olvides?", options: ["Juan Fernando Velasco", "Fausto Miño", "Marlon Rosero", "Gustavo Velásquez"], answer: "Juan Fernando Velasco" },
+  { question: "¿Qué cantante ecuatoriano es conocido por la canción Baila mi vida?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Mirella Cesa"], answer: "Daniel Betancourth" },
+  { question: "¿Qué cantante ecuatoriana es conocida por fusionar música pop con ritmos andinos?", options: ["Mirella Cesa", "Paulina Tamayo", "Silvana Ibarra", "Margarita Laso"], answer: "Mirella Cesa" },
+
+  { question: "¿Qué grupo ecuatoriano popularizó la canción Vasija de barro?", options: ["Los 4 del Altiplano", "Los Corazas", "Pueblo Nuevo", "Jayac"], answer: "Los 4 del Altiplano" },
+  { question: "¿Qué grupo ecuatoriano es conocido por interpretar música andina?", options: ["Los 4 del Altiplano", "Tercer Mundo", "Tranzas", "Verde 70"], answer: "Los 4 del Altiplano" },
+  { question: "¿Qué banda ecuatoriana interpretó la canción Tu recuerdo?", options: ["Tranzas", "Tercer Mundo", "Verde 70", "Cruks en Karnak"], answer: "Tranzas" },
+  { question: "¿Qué grupo ecuatoriano alcanzó popularidad con la canción El alma en los labios?", options: ["Tercer Mundo", "Tranzas", "Guardarraya", "Verde 70"], answer: "Tercer Mundo" },
+  { question: "¿Qué banda ecuatoriana interpretó la canción La última vez?", options: ["Verde 70", "Tranzas", "Tercer Mundo", "Rocola Bacalao"], answer: "Verde 70" },
+
+  { question: "¿Qué compositor ecuatoriano escribió el pasillo Alma en los labios?", options: ["Medardo Ángel Silva", "Julio Jaramillo", "Carlos Rubira Infante", "Nicasio Safadi"], answer: "Medardo Ángel Silva" },
+  { question: "¿Qué compositor ecuatoriano fue conocido por sus numerosas composiciones de pasillos?", options: ["Segundo Cueva Celi", "Antonio Neumane", "Juan León Mera", "Luis A. Martínez"], answer: "Segundo Cueva Celi" },
+  { question: "¿Qué género musical ecuatoriano tiene raíces indígenas y suele interpretarse en fiestas tradicionales?", options: ["Sanjuanito", "Tango", "Samba", "Merengue"], answer: "Sanjuanito" },
+  { question: "¿Qué instrumento de viento andino está formado por varios tubos de diferentes tamaños?", options: ["Rondador", "Guitarra", "Marimba", "Bandoneón"], answer: "Rondador" },
+  { question: "¿Qué cantante ecuatoriano es conocido como el Príncipe de la Canción Nacional?", options: ["Héctor Jaramillo", "Julio Jaramillo", "Segundo Rosero", "Gerardo Morán"], answer: "Héctor Jaramillo" }
+
 ];
