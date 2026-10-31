@@ -211,17 +211,15 @@ export const questions = [
   { question: "¿Qué cantante ecuatoriana es conocida como La Grande del Ecuador?", options: ["Paulina Tamayo", "Margarita Laso", "Silvana Ibarra", "Karina Clavijo"], answer: "Paulina Tamayo" },
   { question: "¿Qué artista ecuatoriano es conocido por la canción El aguacate?", options: ["César Guerrero Tamayo", "Julio Jaramillo", "Carlos Rubira Infante", "Segundo Cueva Celi"], answer: "Cesar Guerrero Tamayo" },
   { question: "¿Qué cantante ecuatoriano interpreta el tema En vida?", options: ["Edhisson", "Gerardo Morán", "Fausto Miño", "Daniel Páez"], answer: "Gerardo Morán" },
-  { question: "¿Qué cantante ecuatoriano popularizó la canción El más querido?", options: ["Gerardo Morán", "Widinson", "Segundo Rosero", "Héctor Jaramillo"], answer: "Widinson" },
+
   { question: "¿Qué cantante ecuatoriano alcanzó popularidad internacional con la canción Chao Lola?", options: ["Fausto Miño", "Juan Fernando Velasco", "Daniel Betancourth", "Jorge Luis del Hierro"], answer: "Juan Fernando Velasco" },
   { question: "¿Qué cantante ecuatoriano interpretó la canción Para que no me olvides?", options: ["Juan Fernando Velasco", "Fausto Miño", "Marlon Rosero", "Gustavo Velásquez"], answer: "Juan Fernando Velasco" },
   { question: "¿Qué cantante ecuatoriano es conocido por la canción Baila mi vida?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Mirella Cesa"], answer: "Daniel Betancourth" },
   { question: "¿Qué cantante ecuatoriana es conocida por fusionar música pop con ritmos andinos?", options: ["Mirella Cesa", "Paulina Tamayo", "Silvana Ibarra", "Margarita Laso"], answer: "Mirella Cesa" },
-
-  { question: "¿Qué grupo ecuatoriano popularizó la canción Vasija de barro?", options: ["Los 4 del Altiplano", "Los Corazas", "Pueblo Nuevo", "Jayac"], answer: "Los 4 del Altiplano" },
   { question: "¿Qué grupo ecuatoriano es conocido por interpretar música andina?", options: ["Los 4 del Altiplano", "Tercer Mundo", "Tranzas", "Verde 70"], answer: "Los 4 del Altiplano" },
-  { question: "¿Qué banda ecuatoriana interpretó la canción Tu recuerdo?", options: ["Tranzas", "Tercer Mundo", "Verde 70", "Cruks en Karnak"], answer: "Tranzas" },
-  { question: "¿Qué grupo ecuatoriano alcanzó popularidad con la canción El alma en los labios?", options: ["Tercer Mundo", "Tranzas", "Guardarraya", "Verde 70"], answer: "Tercer Mundo" },
-  { question: "¿Qué banda ecuatoriana interpretó la canción La última vez?", options: ["Verde 70", "Tranzas", "Tercer Mundo", "Rocola Bacalao"], answer: "Verde 70" },
+  { question: "¿Qué banda ecuatoriana interpretó la canción Debes buscarte un nuevo amor?", options: ["Tranzas", "Tercer Mundo", "Verde 70", "Cruks en Karnak"], answer: "Tranzas" },
+  
+  { question: "¿Qué banda ecuatoriana interpretó la canción No puedo estar sin tí?", options: ["Verde 70", "Tranzas", "Tercer Mundo", "Rocola Bacalao"], answer: "Verde 70" },
 
   { question: "¿Qué compositor ecuatoriano escribió el pasillo Alma en los labios?", options: ["Medardo Ángel Silva", "Julio Jaramillo", "Carlos Rubira Infante", "Nicasio Safadi"], answer: "Medardo Ángel Silva" },
   { question: "¿Qué compositor ecuatoriano fue conocido por sus numerosas composiciones de pasillos?", options: ["Segundo Cueva Celi", "Antonio Neumane", "Juan León Mera", "Luis A. Martínez"], answer: "Segundo Cueva Celi" },
