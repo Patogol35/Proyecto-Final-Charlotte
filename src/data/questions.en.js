@@ -185,27 +185,27 @@ export const questions = [
   { question: "Which scientist visited Ecuador and studied the species of the Galapagos Islands?", options: ["Charles Darwin", "Albert Einstein", "Isaac Newton", "Alexander Fleming"], answer: "Charles Darwin" },
   { question: "In which sport did Ecuador win its first Olympic gold medal?", options: ["Race Walking", "Soccer", "Boxing", "Weightlifting"], answer: "Race Walking" },
 
-  // ECUADORIAN ARTISTS AND MUSIC
-  { question: "Which Ecuadorian singer is known for performing the song Chica Linda?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Widinson"], answer: "Segundo Rosero" },
-  { question: "Which Ecuadorian singer is known as The Great One of Ecuador?", options: ["Paulina Tamayo", "Margarita Laso", "Silvana Ibarra", "Karina Clavijo"], answer: "Paulina Tamayo" },
-  { question: "Which Ecuadorian artist is known for the song El Aguacate?", options: ["César Guerrero Tamayo", "Julio Jaramillo", "Carlos Rubira Infante", "Segundo Cueva Celi"], answer: "Cesar Guerrero Tamayo" },
-  { question: "Which Ecuadorian singer performs the song En Vida?", options: ["Edhisson", "Gerardo Morán", "Fausto Miño", "Daniel Páez"], answer: "Gerardo Morán" },
-  { question: "Which Ecuadorian singer popularized the song El Más Querido?", options: ["Gerardo Morán", "Widinson", "Segundo Rosero", "Héctor Jaramillo"], answer: "Widinson" },
-  { question: "Which Ecuadorian singer achieved international popularity with the song Chao Lola?", options: ["Fausto Miño", "Juan Fernando Velasco", "Daniel Betancourth", "Jorge Luis del Hierro"], answer: "Juan Fernando Velasco" },
-  { question: "Which Ecuadorian singer performed the song Para Que No Me Olvides?", options: ["Juan Fernando Velasco", "Fausto Miño", "Marlon Rosero", "Gustavo Velásquez"], answer: "Juan Fernando Velasco" },
-  { question: "Which Ecuadorian singer is known for the song Baila Mi Vida?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Mirella Cesa"], answer: "Daniel Betancourth" },
-  { question: "Which Ecuadorian singer is known for blending pop music with Andean rhythms?", options: ["Mirella Cesa", "Paulina Tamayo", "Silvana Ibarra", "Margarita Laso"], answer: "Mirella Cesa" },
+  // 🎵 ECUADORIAN ARTISTS AND MUSIC
 
-  { question: "Which Ecuadorian group popularized the song Vasija de Barro?", options: ["Los 4 del Altiplano", "Los Corazas", "Pueblo Nuevo", "Jayac"], answer: "Los 4 del Altiplano" },
-  { question: "Which Ecuadorian group is known for performing Andean music?", options: ["Los 4 del Altiplano", "Tercer Mundo", "Tranzas", "Verde 70"], answer: "Los 4 del Altiplano" },
-  { question: "Which Ecuadorian band performed the song Tu Recuerdo?", options: ["Tranzas", "Tercer Mundo", "Verde 70", "Cruks en Karnak"], answer: "Tranzas" },
-  { question: "Which Ecuadorian group became popular with the song El Alma en los Labios?", options: ["Tercer Mundo", "Tranzas", "Guardarraya", "Verde 70"], answer: "Tercer Mundo" },
-  { question: "Which Ecuadorian band performed the song La Última Vez?", options: ["Verde 70", "Tranzas", "Tercer Mundo", "Rocola Bacalao"], answer: "Verde 70" },
+{ question: "Which Ecuadorian singer is known for performing the song Chica Linda?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Julio Jaramillo"], answer: "Julio Jaramillo" },
+{ question: "Which Ecuadorian singer is known as The Great Lady of Ecuador?", options: ["Paulina Tamayo", "Margarita Laso", "Silvana Ibarra", "Karina Clavijo"], answer: "Paulina Tamayo" },
+{ question: "Which Ecuadorian artist is known for the song El aguacate?", options: ["César Guerrero Tamayo", "Julio Jaramillo", "Carlos Rubira Infante", "Segundo Cueva Celi"], answer: "Julio Jaramillo" },
+{ question: "Which Ecuadorian singer performs the song En vida?", options: ["Edhisson", "Gerardo Morán", "Fausto Miño", "Daniel Páez"], answer: "Gerardo Morán" },
+{ question: "Which Ecuadorian singer is known for performing the song Te voy a confesar?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Israel Brito"], answer: "Israel Brito" },
+{ question: "Which Ecuadorian singer gained international popularity with the song Chao Lola?", options: ["Fausto Miño", "Juan Fernando Velasco", "Daniel Betancourth", "Jorge Luis del Hierro"], answer: "Juan Fernando Velasco" },
+{ question: "Which Ecuadorian singer performed the song Para que no me olvides?", options: ["Juan Fernando Velasco", "Fausto Miño", "Marlon Rosero", "Gustavo Velásquez"], answer: "Juan Fernando Velasco" },
+{ question: "Which Ecuadorian singer is known for the song Baila mi vida?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Mirella Cesa"], answer: "Fausto Miño" },
+{ question: "Which Ecuadorian singer is known for blending pop music with Andean rhythms?", options: ["Mirella Cesa", "Paulina Tamayo", "Silvana Ibarra", "Margarita Laso"], answer: "Mirella Cesa" },
+{ question: "Which Ecuadorian group is known for performing Andean music?", options: ["Los 4 del Altiplano", "Tercer Mundo", "Tranzas", "Verde 70"], answer: "Los 4 del Altiplano" },
+{ question: "Which Ecuadorian band performed the song Debes buscarte un nuevo amor?", options: ["Tranzas", "Tercer Mundo", "Verde 70", "Cruks en Karnak"], answer: "Tranzas" },
+{ question: "Which Ecuadorian female singer performed the song Dicen?", options: ["Pamela Cortés", "Mirella Cesa", "Johanna Carreño", "Karol Noboa"], answer: "Pamela Cortés" },
+{ question: "Which Ecuadorian band performed the song No puedo estar sin ti?", options: ["Verde 70", "Tranzas", "Tercer Mundo", "Rocola Bacalao"], answer: "Verde 70" },
+{ question: "Which Ecuadorian band is known for songs such as Al Borde and Como Camina?", options: ["Cruks en Karnak", "Tercer Mundo", "Verde 70", "Bajo Sueños"], answer: "Cruks en Karnak" },
+{ question: "Which Ecuadorian group is famous for the song Tarjetitas?", options: ["Tranzas", "Tercer Mundo", "Sudakaya", "La Grupa"], answer: "Tercer Mundo" },
 
-  { question: "Which Ecuadorian poet wrote the lyrics of the Pasillo Alma en los Labios?", options: ["Medardo Ángel Silva", "Julio Jaramillo", "Carlos Rubira Infante", "Nicasio Safadi"], answer: "Medardo Ángel Silva" },
-  { question: "Which Ecuadorian composer was known for his numerous Pasillo compositions?", options: ["Segundo Cueva Celi", "Antonio Neumane", "Juan León Mera", "Luis A. Martínez"], answer: "Segundo Cueva Celi" },
-  { question: "Which Ecuadorian musical genre has Indigenous roots and is often performed at traditional festivals?", options: ["Sanjuanito", "Tango", "Samba", "Merengue"], answer: "Sanjuanito" },
-  { question: "Which Andean wind instrument is made up of several tubes of different sizes?", options: ["Rondador", "Guitar", "Marimba", "Bandoneon"], answer: "Rondador" },
-  { question: "Which Ecuadorian singer is known as the Prince of National Song?", options: ["Héctor Jaramillo", "Julio Jaramillo", "Segundo Rosero", "Gerardo Morán"], answer: "Héctor Jaramillo" }
+{ question: "Which singer is considered Ecuador's leading representative of rockola music, with songs such as Te quiero, te quiero?", options: ["Roberto Calero", "Segundo Rosero", "Claudio Vallejo", "Fausto Miño"], answer: "Segundo Rosero" },
+{ question: "Which Ecuadorian singer is recognized for the song Seductora?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Israel Brito"], answer: "Daniel Betancourth" },
+{ question: "Which pop and ballad singer is known for the popular song Prisionero?", options: ["Jorge Luis del Hierro", "Daniel Páez", "Douglas Bastidas", "Johann Vera"], answer: "Jorge Luis del Hierro" },
+{ question: "Which band from Cuenca is one of Ecuador's leading heavy metal and classic rock acts?", options: ["Bajo Sueños", "Sal y Mileto", "Anima Inside", "Mamá Vudú"], answer: "Bajo Sueños" }
 
 ];
