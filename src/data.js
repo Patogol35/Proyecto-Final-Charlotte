@@ -214,7 +214,7 @@ export const questions = [
 { question: "¿Qué cantante ecuatoriano es conocido por interpretar el tema Te voy a confesar?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Israel Brito"], answer: "Israel Brito" },
   { question: "¿Qué cantante ecuatoriano alcanzó popularidad internacional con la canción Chao Lola?", options: ["Fausto Miño", "Juan Fernando Velasco", "Daniel Betancourth", "Jorge Luis del Hierro"], answer: "Juan Fernando Velasco" },
   { question: "¿Qué cantante ecuatoriano interpretó la canción Para que no me olvides?", options: ["Juan Fernando Velasco", "Fausto Miño", "Marlon Rosero", "Gustavo Velásquez"], answer: "Juan Fernando Velasco" },
-  { question: "¿Qué cantante ecuatoriano es conocido por la canción Baila mi vida?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Mirella Cesa"], answer: "Daniel Betancourth" },
+  { question: "¿Qué cantante ecuatoriano es conocido por la canción Baila mi vida?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Mirella Cesa"], answer: "Fausto Miño" },
   { question: "¿Qué cantante ecuatoriana es conocida por fusionar música pop con ritmos andinos?", options: ["Mirella Cesa", "Paulina Tamayo", "Silvana Ibarra", "Margarita Laso"], answer: "Mirella Cesa" },
   { question: "¿Qué grupo ecuatoriano es conocido por interpretar música andina?", options: ["Los 4 del Altiplano", "Tercer Mundo", "Tranzas", "Verde 70"], answer: "Los 4 del Altiplano" },
   { question: "¿Qué banda ecuatoriana interpretó la canción Debes buscarte un nuevo amor?", options: ["Tranzas", "Tercer Mundo", "Verde 70", "Cruks en Karnak"], answer: "Tranzas" },
