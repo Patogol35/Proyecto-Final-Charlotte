@@ -70,7 +70,7 @@ export const questions = [
   { question: "In what year was Juan Montalvo born?", options: ["1832", "1840", "1855", "1825"], answer: "1832" },
   { question: "Which is one of Juan Montalvo's most famous works?", options: ["Las Catilinarias", "One Hundred Years of Solitude", "Don Quixote", "Huasipungo"], answer: "Las Catilinarias" },
   { question: "Where did Juan Montalvo die?", options: ["Quito", "Guayaquil", "Paris", "Ambato"], answer: "Paris" },
-  { question: "In what year was Juan León Mera born?", options: ["1832", "1844", "1820", "1850"], answer: "1844" },
+  { question: "In what year was Juan León Mera born?", options: ["1832", "1844", "1820", "1850"], answer: "1832" },
   { question: "Which is one of Juan León Mera's most famous works?", options: ["Cumandá", "La Vorágine", "Huasipungo", "María"], answer: "Cumandá" },
   { question: "In which Ecuadorian city was Juan León Mera born?", options: ["Ambato", "Quito", "Guayaquil", "Loja"], answer: "Ambato" },
   { question: "Which emblematic church is located in downtown Ambato?", options: ["The Cathedral Church", "San Francisco Church", "Basilica of the National Vow", "La Merced Church"], answer: "The Cathedral Church" },
