@@ -209,7 +209,7 @@ export const questions = [
 
   { question: "¿Qué cantante ecuatoriano es conocido por interpretar el tema Chica Linda?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Julio Jaramillo"], answer: "Julio Jaramillo" },
   { question: "¿Qué cantante ecuatoriana es conocida como La Grande del Ecuador?", options: ["Paulina Tamayo", "Margarita Laso", "Silvana Ibarra", "Karina Clavijo"], answer: "Paulina Tamayo" },
-  { question: "¿Qué artista ecuatoriano es conocido por la canción El aguacate?", options: ["César Guerrero Tamayo", "Julio Jaramillo", "Carlos Rubira Infante", "Segundo Cueva Celi"], answer: "Cesar Guerrero Tamayo" },
+  { question: "¿Qué artista ecuatoriano es conocido por la canción El aguacate?", options: ["César Guerrero Tamayo", "Julio Jaramillo", "Carlos Rubira Infante", "Segundo Cueva Celi"], answer: "Julio Jaramillo" },
   { question: "¿Qué cantante ecuatoriano interpreta el tema En vida?", options: ["Edhisson", "Gerardo Morán", "Fausto Miño", "Daniel Páez"], answer: "Gerardo Morán" },
 { question: "¿Qué cantante ecuatoriano es conocido por interpretar el tema Te voy a confesar?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Israel Brito"], answer: "Israel Brito" },
   { question: "¿Qué cantante ecuatoriano alcanzó popularidad internacional con la canción Chao Lola?", options: ["Fausto Miño", "Juan Fernando Velasco", "Daniel Betancourth", "Jorge Luis del Hierro"], answer: "Juan Fernando Velasco" },
@@ -220,6 +220,14 @@ export const questions = [
   { question: "¿Qué banda ecuatoriana interpretó la canción Debes buscarte un nuevo amor?", options: ["Tranzas", "Tercer Mundo", "Verde 70", "Cruks en Karnak"], answer: "Tranzas" },
   
   { question: "¿Qué banda ecuatoriana interpretó la canción No puedo estar sin tí?", options: ["Verde 70", "Tranzas", "Tercer Mundo", "Rocola Bacalao"], answer: "Verde 70" },
+    { question: "¿Qué cantautor ecuatoriano es conocido por éxitos de rock latino como El canelazo y Al borde?", options: ["Cruks en Karnak", "Tercer Mundo", "Verde 70", "Bajo Sueños"], answer: "Cruks en Karnak" },
+  { question: "¿Qué grupo ecuatoriano, integrado por los hermanos Jácome, es famoso por la canción del Tarjetitas?", options: ["Tranzas", "Tercer Mundo", "Sudakaya", "La Grupa"], answer: "Tercer Mundo" },
+  
+  { question: "¿Qué cantante es considerado el máximo exponente de la rockola en Ecuador con temas como Te quiero, te quiero?", options: ["Roberto Calero", "Segundo Rosero", "Claudio Vallejo", "Fausto Miño"], answer: "Segundo Rosero" },
+  { question: "¿Qué cantante ecuatoriano es reconocido por su canción Seductora?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Israel Brito"], answer: "Daniel Betancourth" },
+  { question: "¿Qué cantante de pop y baladas es conocido por su popular tema Prisionero?", options: ["Jorge Luis del Hierro", "Daniel Páez", "Douglas Bastidas", "Johann Vera"], answer: "Jorge Luis del Hierro" },
+  { question: "¿Qué banda cuencana es uno de los máximos referentes del heavy metal y rock clásico en Ecuador?", options: ["Bajo Sueños", "Sal y Mileto", "Anima Inside", "Mamá Vudú"], answer: "Bajo Sueños" },
+  
 
   
   
