@@ -218,9 +218,9 @@ export const questions = [
   { question: "¿Qué cantante ecuatoriana es conocida por fusionar música pop con ritmos andinos?", options: ["Mirella Cesa", "Paulina Tamayo", "Silvana Ibarra", "Margarita Laso"], answer: "Mirella Cesa" },
   { question: "¿Qué grupo ecuatoriano es conocido por interpretar música andina?", options: ["Los 4 del Altiplano", "Tercer Mundo", "Tranzas", "Verde 70"], answer: "Los 4 del Altiplano" },
   { question: "¿Qué banda ecuatoriana interpretó la canción Debes buscarte un nuevo amor?", options: ["Tranzas", "Tercer Mundo", "Verde 70", "Cruks en Karnak"], answer: "Tranzas" },
-  
+  { question: "¿Qué cantante ecuatoriana interpretó la canción Dicen?", options: ["Pamela Cortés", "Mirella Cesa", "Johanna Carreño", "Karol Noboa"], answer: "Pamela Cortés" },
   { question: "¿Qué banda ecuatoriana interpretó la canción No puedo estar sin tí?", options: ["Verde 70", "Tranzas", "Tercer Mundo", "Rocola Bacalao"], answer: "Verde 70" },
-    { question: "¿Qué cantautor ecuatoriano es conocido por éxitos de rock latino como El canelazo y Al borde?", options: ["Cruks en Karnak", "Tercer Mundo", "Verde 70", "Bajo Sueños"], answer: "Cruks en Karnak" },
+  { question: "¿Qué banda ecuatoriana es conocida por canciones como Al Borde y Como Camina?", options: ["Cruks en Karnak", "Tercer Mundo", "Verde 70", "Bajo Sueños"], answer: "Cruks en Karnak" },
   { question: "¿Qué grupo ecuatoriano, es famoso por la canción Tarjetitas?", options: ["Tranzas", "Tercer Mundo", "Sudakaya", "La Grupa"], answer: "Tercer Mundo" },
   
   { question: "¿Qué cantante es considerado el máximo exponente de la rockola en Ecuador con temas como Te quiero, te quiero?", options: ["Roberto Calero", "Segundo Rosero", "Claudio Vallejo", "Fausto Miño"], answer: "Segundo Rosero" },
