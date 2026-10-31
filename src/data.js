@@ -221,7 +221,7 @@ export const questions = [
   
   { question: "¿Qué banda ecuatoriana interpretó la canción No puedo estar sin tí?", options: ["Verde 70", "Tranzas", "Tercer Mundo", "Rocola Bacalao"], answer: "Verde 70" },
     { question: "¿Qué cantautor ecuatoriano es conocido por éxitos de rock latino como El canelazo y Al borde?", options: ["Cruks en Karnak", "Tercer Mundo", "Verde 70", "Bajo Sueños"], answer: "Cruks en Karnak" },
-  { question: "¿Qué grupo ecuatoriano, integrado por los hermanos Jácome, es famoso por la canción del Tarjetitas?", options: ["Tranzas", "Tercer Mundo", "Sudakaya", "La Grupa"], answer: "Tercer Mundo" },
+  { question: "¿Qué grupo ecuatoriano, es famoso por la canción Tarjetitas?", options: ["Tranzas", "Tercer Mundo", "Sudakaya", "La Grupa"], answer: "Tercer Mundo" },
   
   { question: "¿Qué cantante es considerado el máximo exponente de la rockola en Ecuador con temas como Te quiero, te quiero?", options: ["Roberto Calero", "Segundo Rosero", "Claudio Vallejo", "Fausto Miño"], answer: "Segundo Rosero" },
   { question: "¿Qué cantante ecuatoriano es reconocido por su canción Seductora?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Israel Brito"], answer: "Daniel Betancourth" },
