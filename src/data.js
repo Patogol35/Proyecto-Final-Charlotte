@@ -207,11 +207,11 @@ export const questions = [
   // 🎵 ARTISTAS Y MÚSICA ECUATORIANA
 
 
-  { question: "¿Qué cantante ecuatoriano es conocido por interpretar el tema Chica Linda?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Widinson"], answer: "Segundo Rosero" },
+  { question: "¿Qué cantante ecuatoriano es conocido por interpretar el tema Chica Linda?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Julio Jaramillo"], answer: "Julio Jaramillo" },
   { question: "¿Qué cantante ecuatoriana es conocida como La Grande del Ecuador?", options: ["Paulina Tamayo", "Margarita Laso", "Silvana Ibarra", "Karina Clavijo"], answer: "Paulina Tamayo" },
   { question: "¿Qué artista ecuatoriano es conocido por la canción El aguacate?", options: ["César Guerrero Tamayo", "Julio Jaramillo", "Carlos Rubira Infante", "Segundo Cueva Celi"], answer: "Cesar Guerrero Tamayo" },
   { question: "¿Qué cantante ecuatoriano interpreta el tema En vida?", options: ["Edhisson", "Gerardo Morán", "Fausto Miño", "Daniel Páez"], answer: "Gerardo Morán" },
-
+{ question: "¿Qué cantante ecuatoriano es conocido por interpretar el tema Te voy a confesar?", options: ["Segundo Rosero", "Gerardo Morán", "Paulina Tamayo", "Israel Brito"], answer: "Israel Brito" },
   { question: "¿Qué cantante ecuatoriano alcanzó popularidad internacional con la canción Chao Lola?", options: ["Fausto Miño", "Juan Fernando Velasco", "Daniel Betancourth", "Jorge Luis del Hierro"], answer: "Juan Fernando Velasco" },
   { question: "¿Qué cantante ecuatoriano interpretó la canción Para que no me olvides?", options: ["Juan Fernando Velasco", "Fausto Miño", "Marlon Rosero", "Gustavo Velásquez"], answer: "Juan Fernando Velasco" },
   { question: "¿Qué cantante ecuatoriano es conocido por la canción Baila mi vida?", options: ["Daniel Betancourth", "Fausto Miño", "Jorge Luis del Hierro", "Mirella Cesa"], answer: "Daniel Betancourth" },
@@ -221,10 +221,8 @@ export const questions = [
   
   { question: "¿Qué banda ecuatoriana interpretó la canción No puedo estar sin tí?", options: ["Verde 70", "Tranzas", "Tercer Mundo", "Rocola Bacalao"], answer: "Verde 70" },
 
-  { question: "¿Qué compositor ecuatoriano escribió el pasillo Alma en los labios?", options: ["Medardo Ángel Silva", "Julio Jaramillo", "Carlos Rubira Infante", "Nicasio Safadi"], answer: "Medardo Ángel Silva" },
-  { question: "¿Qué compositor ecuatoriano fue conocido por sus numerosas composiciones de pasillos?", options: ["Segundo Cueva Celi", "Antonio Neumane", "Juan León Mera", "Luis A. Martínez"], answer: "Segundo Cueva Celi" },
-  { question: "¿Qué género musical ecuatoriano tiene raíces indígenas y suele interpretarse en fiestas tradicionales?", options: ["Sanjuanito", "Tango", "Samba", "Merengue"], answer: "Sanjuanito" },
-  { question: "¿Qué instrumento de viento andino está formado por varios tubos de diferentes tamaños?", options: ["Rondador", "Guitarra", "Marimba", "Bandoneón"], answer: "Rondador" },
-  { question: "¿Qué cantante ecuatoriano es conocido como el Príncipe de la Canción Nacional?", options: ["Héctor Jaramillo", "Julio Jaramillo", "Segundo Rosero", "Gerardo Morán"], answer: "Héctor Jaramillo" }
+  
+  
+    
 
 ];
