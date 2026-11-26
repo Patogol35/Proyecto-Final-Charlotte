@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -19,6 +20,8 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import TimerIcon from "@mui/icons-material/Timer";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import BarChartIcon from "@mui/icons-material/BarChart";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 import { motion } from "framer-motion";
 
@@ -35,30 +38,61 @@ export default function WelcomeScreen({
 
   const text = {
     title: isEnglish ? "Interactive Quiz" : "Quiz Interactivo",
+
     project: isEnglish
       ? "English Final Project"
       : "Proyecto Final de Inglés",
+
     institute: isEnglish
-  ? "Charlotte English School"
-  : "Escuela de Inglés Charlotte",
+      ? "Charlotte English School"
+      : "Escuela de Inglés Charlotte",
+
     developed: isEnglish ? "Developed by" : "Desarrollado por",
+
     instructions: isEnglish ? "Instructions" : "Instrucciones",
+
     questions: isEnglish
       ? "Answer a total of 20 questions, worth 0.5 points each."
       : "Responde un total de 20 preguntas, a 0.5 puntos cada una.",
+
     time: isEnglish
       ? "You have a time limit for each question."
       : "Tienes un límite de tiempo para cada pregunta.",
+
     points: isEnglish
       ? "Earn points for each correct answer."
       : "Gana puntos por cada respuesta correcta.",
+
+    featuresTitle: isEnglish ? "Main Features" : "Características principales",
+
+    features: isEnglish
+      ? [
+          "Three difficulty levels: easy, medium, and hard.",
+          "A timer for each question.",
+          "Interactive animations.",
+          "Light mode and dark mode.",
+          "Final score with personalized messages.",
+          "Option to restart the quiz.",
+        ]
+      : [
+          "Tres niveles de dificultad: fácil, medio y difícil.",
+          "Un temporizador para cada pregunta.",
+          "Animaciones interactivas.",
+          "Modo claro y modo oscuro.",
+          "Puntuación final con mensajes personalizados.",
+          "Opción para reiniciar el cuestionario.",
+        ],
+
     difficulty: isEnglish
       ? "Choose the difficulty before starting:"
       : "Selecciona la dificultad:",
+
     easy: isEnglish ? "Easy" : "Fácil",
     medium: isEnglish ? "Medium" : "Medio",
     hard: isEnglish ? "Hard" : "Difícil",
+
     start: isEnglish ? "Start" : "Comenzar",
+
     theme: isEnglish
       ? darkMode
         ? "Switch to light mode"
@@ -78,6 +112,15 @@ export default function WelcomeScreen({
     { value: "easy", label: text.easy },
     { value: "medium", label: text.medium },
     { value: "hard", label: text.hard },
+  ];
+
+  const featureIcons = [
+    <BarChartIcon />,
+    <TimerIcon />,
+    <AutoAwesomeIcon />,
+    <DarkModeIcon />,
+    <EmojiEventsIcon />,
+    <RestartAltIcon />,
   ];
 
   return (
@@ -182,7 +225,6 @@ export default function WelcomeScreen({
             variant="body2"
             sx={{
               mb: 3,
-              
               color: "text.primary",
               letterSpacing: 0.3,
             }}
@@ -279,6 +321,68 @@ export default function WelcomeScreen({
             </Typography>
           </Stack>
 
+          {/* MAIN FEATURES */}
+          <Stack
+            spacing={1.5}
+            sx={{
+              textAlign: "left",
+              p: { xs: 2, sm: 3 },
+              mb: 3,
+              borderRadius: 3,
+              background: (theme) =>
+                theme.palette.mode === "dark"
+                  ? "rgba(100,116,139,0.15)"
+                  : "rgba(96,165,250,0.08)",
+              border: "1px solid",
+              borderColor: "divider",
+            }}
+          >
+            <Typography
+              variant="subtitle1"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                fontWeight: 600,
+                mb: 0.5,
+              }}
+            >
+              <AutoAwesomeIcon fontSize="small" color="primary" />
+              {text.featuresTitle}
+            </Typography>
+
+            {text.features.map((feature, index) => (
+              <Typography
+                key={index}
+                variant="body2"
+                sx={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 1.2,
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: "primary.main",
+                    flexShrink: 0,
+                    mt: "1px",
+                  }}
+                >
+                  {index === 0 && <BarChartIcon fontSize="small" />}
+                  {index === 1 && <TimerIcon fontSize="small" />}
+                  {index === 2 && <AutoAwesomeIcon fontSize="small" />}
+                  {index === 3 && <DarkModeIcon fontSize="small" />}
+                  {index === 4 && <EmojiEventsIcon fontSize="small" />}
+                  {index === 5 && <RestartAltIcon fontSize="small" />}
+                </Box>
+
+                {feature}
+              </Typography>
+            ))}
+          </Stack>
+
           {/* SELECCIÓN DE DIFICULTAD */}
           <Stack spacing={2} alignItems="center">
             <Typography variant="body2" fontWeight={600}>
@@ -368,4 +472,4 @@ export default function WelcomeScreen({
       </Card>
     </motion.div>
   );
-          }
+}
