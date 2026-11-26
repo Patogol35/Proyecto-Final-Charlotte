@@ -63,58 +63,25 @@ export default function WelcomeScreen({
       ? "Earn points for each correct answer."
       : "Gana puntos por cada respuesta correcta.",
 
-    featuresTitle: isEnglish
-      ? "Main Features"
-      : "Características principales",
+    featuresTitle: isEnglish ? "Main Features" : "Características principales",
 
-    featuresSubtitle: isEnglish
-      ? "Discover what makes this quiz special."
-      : "Descubre las características de este cuestionario.",
-
-    features: [
-      {
-        icon: <BarChartIcon />,
-        title: isEnglish ? "3 Difficulty Levels" : "3 niveles de dificultad",
-        description: isEnglish
-          ? "Easy, medium, and hard."
-          : "Fácil, medio y difícil.",
-      },
-      {
-        icon: <TimerIcon />,
-        title: isEnglish ? "Question Timer" : "Temporizador",
-        description: isEnglish
-          ? "A timer for each question."
-          : "Tiempo límite por pregunta.",
-      },
-      {
-        icon: <AutoAwesomeIcon />,
-        title: isEnglish ? "Animations" : "Animaciones",
-        description: isEnglish
-          ? "Interactive animations."
-          : "Animaciones interactivas.",
-      },
-      {
-        icon: <DarkModeIcon />,
-        title: isEnglish ? "Light & Dark Mode" : "Modo claro y oscuro",
-        description: isEnglish
-          ? "Choose your preferred theme."
-          : "Elige tu tema preferido.",
-      },
-      {
-        icon: <EmojiEventsIcon />,
-        title: isEnglish ? "Final Score" : "Puntuación final",
-        description: isEnglish
-          ? "Personalized messages."
-          : "Mensajes personalizados.",
-      },
-      {
-        icon: <RestartAltIcon />,
-        title: isEnglish ? "Restart Quiz" : "Reiniciar cuestionario",
-        description: isEnglish
-          ? "Play again whenever you want."
-          : "Vuelve a jugar cuando quieras.",
-      },
-    ],
+    features: isEnglish
+      ? [
+          "Three difficulty levels: easy, medium, and hard.",
+          "A timer for each question.",
+          "Interactive animations.",
+          "Light mode and dark mode.",
+          "Final score with personalized messages.",
+          "Option to restart the quiz.",
+        ]
+      : [
+          "Tres niveles de dificultad: fácil, medio y difícil.",
+          "Un temporizador para cada pregunta.",
+          "Animaciones interactivas.",
+          "Modo claro y modo oscuro.",
+          "Puntuación final con mensajes personalizados.",
+          "Opción para reiniciar el cuestionario.",
+        ],
 
     difficulty: isEnglish
       ? "Choose the difficulty before starting:"
@@ -123,7 +90,6 @@ export default function WelcomeScreen({
     easy: isEnglish ? "Easy" : "Fácil",
     medium: isEnglish ? "Medium" : "Medio",
     hard: isEnglish ? "Hard" : "Difícil",
-
     start: isEnglish ? "Start" : "Comenzar",
 
     theme: isEnglish
@@ -145,6 +111,15 @@ export default function WelcomeScreen({
     { value: "easy", label: text.easy },
     { value: "medium", label: text.medium },
     { value: "hard", label: text.hard },
+  ];
+
+  const featureIcons = [
+    <BarChartIcon fontSize="small" />,
+    <TimerIcon fontSize="small" />,
+    <AutoAwesomeIcon fontSize="small" />,
+    <DarkModeIcon fontSize="small" />,
+    <EmojiEventsIcon fontSize="small" />,
+    <RestartAltIcon fontSize="small" />,
   ];
 
   return (
@@ -237,7 +212,10 @@ export default function WelcomeScreen({
           <Typography
             variant="subtitle1"
             fontWeight={700}
-            sx={{ mb: 0.5, color: "text.primary" }}
+            sx={{
+              mb: 0.5,
+              color: "text.primary",
+            }}
           >
             {text.project}
           </Typography>
@@ -276,9 +254,9 @@ export default function WelcomeScreen({
             </Box>
           </Typography>
 
-          {/* INSTRUCCIONES */}
+          {/* INSTRUCCIONES Y MAIN FEATURES */}
           <Stack
-            spacing={1.5}
+            spacing={2}
             sx={{
               textAlign: "left",
               p: { xs: 2, sm: 3 },
@@ -292,6 +270,7 @@ export default function WelcomeScreen({
               borderColor: "divider",
             }}
           >
+            {/* INSTRUCCIONES */}
             <Typography
               variant="subtitle1"
               sx={{
@@ -340,127 +319,60 @@ export default function WelcomeScreen({
               />
               {text.points}
             </Typography>
-          </Stack>
 
-          {/* MAIN FEATURES */}
-          <Box sx={{ textAlign: "left", mb: 3 }}>
-            <Stack
-              direction="row"
-              alignItems="center"
-              spacing={1}
-              sx={{ mb: 0.5 }}
+            {/* SEPARADOR */}
+            <Box
+              sx={{
+                borderTop: "1px solid",
+                borderColor: "divider",
+                pt: 1.5,
+              }}
             >
-              <AutoAwesomeIcon
-                sx={{ color: "#2563eb", fontSize: 21 }}
-              />
-
               <Typography
                 variant="subtitle1"
                 fontWeight={700}
-                color="text.primary"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  mb: 1.5,
+                }}
               >
+                <AutoAwesomeIcon
+                  fontSize="small"
+                  color="primary"
+                />
                 {text.featuresTitle}
               </Typography>
-            </Stack>
 
-            <Typography
-              variant="caption"
-              color="text.secondary"
-              sx={{ display: "block", mb: 2 }}
-            >
-              {text.featuresSubtitle}
-            </Typography>
-
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: {
-                  xs: "1fr 1fr",
-                  sm: "1fr 1fr",
-                },
-                gap: 1.2,
-              }}
-            >
-              {text.features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.35,
-                    delay: index * 0.06,
-                  }}
-                >
-                  <Box
+              <Stack spacing={1.3}>
+                {text.features.map((feature, index) => (
+                  <Typography
+                    key={index}
+                    variant="body2"
                     sx={{
-                      height: "100%",
-                      minHeight: 105,
-                      p: 1.5,
-                      borderRadius: 2.5,
-                      border: "1px solid",
-                      borderColor: "divider",
-                      background: (theme) =>
-                        theme.palette.mode === "dark"
-                          ? "rgba(51,65,85,0.35)"
-                          : "rgba(255,255,255,0.75)",
                       display: "flex",
-                      flexDirection: "column",
                       alignItems: "flex-start",
-                      gap: 0.8,
-                      transition: "border-color 0.2s ease",
-                      "&:hover": {
-                        borderColor: "#60a5fa",
-                      },
+                      gap: 1,
+                      lineHeight: 1.5,
                     }}
                   >
                     <Box
                       sx={{
-                        width: 32,
-                        height: 32,
-                        borderRadius: 2,
+                        color: "primary.main",
                         display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "#2563eb",
-                        backgroundColor: (theme) =>
-                          theme.palette.mode === "dark"
-                            ? "rgba(37,99,235,0.18)"
-                            : "rgba(37,99,235,0.09)",
-                        "& svg": {
-                          fontSize: 19,
-                        },
+                        flexShrink: 0,
+                        mt: "2px",
                       }}
                     >
-                      {feature.icon}
+                      {featureIcons[index]}
                     </Box>
-
-                    <Typography
-                      variant="body2"
-                      fontWeight={700}
-                      color="text.primary"
-                      sx={{
-                        lineHeight: 1.3,
-                        fontSize: { xs: "0.78rem", sm: "0.85rem" },
-                      }}
-                    >
-                      {feature.title}
-                    </Typography>
-
-                    <Typography
-                      variant="caption"
-                      color="text.secondary"
-                      sx={{
-                        lineHeight: 1.4,
-                        fontSize: "0.72rem",
-                      }}
-                    >
-                      {feature.description}
-                    </Typography>
-                  </Box>
-                </motion.div>
-              ))}
+                    {feature}
+                  </Typography>
+                ))}
+              </Stack>
             </Box>
-          </Box>
+          </Stack>
 
           {/* SELECCIÓN DE DIFICULTAD */}
           <Stack spacing={2} alignItems="center">
