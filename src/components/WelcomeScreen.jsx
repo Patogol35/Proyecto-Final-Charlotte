@@ -1,492 +1,263 @@
 
+import React from "react";
 import {
-  Card,
-  CardContent,
+  Box,
   Typography,
   Button,
-  Stack,
-  ToggleButton,
-  ToggleButtonGroup,
-  IconButton,
-  Box,
-  Tooltip,
+  Paper,
+  FormControl,
+  Select,
+  MenuItem,
 } from "@mui/material";
 
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import InfoIcon from "@mui/icons-material/Info";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import TimerIcon from "@mui/icons-material/Timer";
-import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import BarChartIcon from "@mui/icons-material/BarChart";
+import TimerIcon from "@mui/icons-material/Timer";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
-import { motion } from "framer-motion";
-
-export default function WelcomeScreen({
-  onStart,
-  setDifficulty,
-  difficulty,
+const WelcomeScreen = ({
+  language,
   darkMode,
-  toggleDarkMode,
-  language = "es",
-  setLanguage = () => {},
-}) {
-  const isEnglish = language === "en";
-
-  const text = {
-    title: isEnglish ? "Interactive Quiz" : "Quiz Interactivo",
-
-    project: isEnglish
-      ? "English Final Project"
-      : "Proyecto Final de Inglés",
-
-    institute: isEnglish
-      ? "Charlotte English School"
-      : "Escuela de Inglés Charlotte",
-
-    developed: isEnglish ? "Developed by" : "Desarrollado por",
-
-    instructions: isEnglish ? "Instructions" : "Instrucciones",
-
-    questions: isEnglish
-      ? "Answer a total of 20 questions, worth 0.5 points each."
-      : "Responde un total de 20 preguntas, a 0.5 puntos cada una.",
-
-    time: isEnglish
-      ? "You have a time limit for each question."
-      : "Tienes un límite de tiempo para cada pregunta.",
-
-    points: isEnglish
-      ? "Earn points for each correct answer."
-      : "Gana puntos por cada respuesta correcta.",
-
-    featuresTitle: isEnglish
-      ? "Main Features"
-      : "Características principales",
-
-    features: isEnglish
-      ? [
-          "Three difficulty levels: easy, medium, and hard.",
-          "A timer for each question.",
-          "Interactive animations.",
-          "Light mode and dark mode.",
-          "Final score with personalized messages.",
-          "Option to restart the quiz.",
-        ]
-      : [
-          "Tres niveles de dificultad: fácil, medio y difícil.",
-          "Un temporizador para cada pregunta.",
-          "Animaciones interactivas.",
-          "Modo claro y modo oscuro.",
-          "Puntuación final con mensajes personalizados.",
-          "Opción para reiniciar el cuestionario.",
-        ],
-
-    difficulty: isEnglish
-      ? "Choose the difficulty before starting:"
-      : "Selecciona la dificultad:",
-
-    easy: isEnglish ? "Easy" : "Fácil",
-    medium: isEnglish ? "Medium" : "Medio",
-    hard: isEnglish ? "Hard" : "Difícil",
-
-    start: isEnglish ? "Start" : "Comenzar",
-
-    theme: isEnglish
-      ? darkMode
-        ? "Switch to light mode"
-        : "Switch to dark mode"
-      : darkMode
-        ? "Cambiar a modo claro"
-        : "Cambiar a modo oscuro",
+  setDarkMode,
+  difficulty,
+  setDifficulty,
+  onStart,
+}) => {
+  const translations = {
+    en: {
+      title: "English Quiz",
+      subtitle: "Test your English knowledge!",
+      instructions: "Instructions",
+      instruction1: "Answer a total of 20 questions, worth 0.5 points each.",
+      instruction2: "You have a time limit for each question.",
+      instruction3: "Earn points for each correct answer.",
+      mainFeatures: "Main Features",
+      feature1: "Three difficulty levels: easy, medium, and hard.",
+      feature2: "A timer for each question.",
+      feature3: "Interactive animations.",
+      feature4: "Light mode and dark mode.",
+      feature5: "Final score with personalized messages.",
+      feature6: "Option to restart the quiz.",
+      difficulty: "Select Difficulty",
+      easy: "Easy",
+      medium: "Medium",
+      hard: "Hard",
+      start: "Start Quiz",
+    },
+    es: {
+      title: "Cuestionario de Inglés",
+      subtitle: "¡Pon a prueba tus conocimientos de inglés!",
+      instructions: "Instrucciones",
+      instruction1: "Responde un total de 20 preguntas, cada una vale 0.5 puntos.",
+      instruction2: "Tienes un límite de tiempo para cada pregunta.",
+      instruction3: "Gana puntos por cada respuesta correcta.",
+      mainFeatures: "Características principales",
+      feature1: "Tres niveles de dificultad: fácil, medio y difícil.",
+      feature2: "Un temporizador para cada pregunta.",
+      feature3: "Animaciones interactivas.",
+      feature4: "Modo claro y modo oscuro.",
+      feature5: "Puntuación final con mensajes personalizados.",
+      feature6: "Opción para reiniciar el cuestionario.",
+      difficulty: "Selecciona la dificultad",
+      easy: "Fácil",
+      medium: "Medio",
+      hard: "Difícil",
+      start: "Comenzar cuestionario",
+    },
   };
 
-  const colors = {
-    easy: { main: "#16a34a", hover: "#15803d" },
-    medium: { main: "#2563eb", hover: "#1d4ed8" },
-    hard: { main: "#dc2626", hover: "#b91c1c" },
-  };
-
-  const levels = [
-    { value: "easy", label: text.easy },
-    { value: "medium", label: text.medium },
-    { value: "hard", label: text.hard },
-  ];
+  const t = translations[language] || translations.en;
 
   const featureIcons = [
-    <BarChartIcon />,
-    <TimerIcon />,
-    <AutoAwesomeIcon />,
-    <DarkModeIcon />,
-    <EmojiEventsIcon />,
-    <RestartAltIcon />,
+    <BarChartIcon sx={{ color: "#16a34a" }} />,
+    <TimerIcon sx={{ color: "#f59e0b" }} />,
+    <AutoAwesomeIcon sx={{ color: "#a855f7" }} />,
+    <DarkModeIcon sx={{ color: "#2563eb" }} />,
+    <EmojiEventsIcon sx={{ color: "#eab308" }} />,
+    <RestartAltIcon sx={{ color: "#06b6d4" }} />,
+  ];
+
+  const features = [
+    t.feature1,
+    t.feature2,
+    t.feature3,
+    t.feature4,
+    t.feature5,
+    t.feature6,
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      style={{ width: "100%", maxWidth: 550 }}
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        p: 2,
+        backgroundColor: darkMode ? "#121212" : "#f5f7fb",
+        color: darkMode ? "#ffffff" : "#1e293b",
+        transition: "background-color 0.3s ease",
+      }}
     >
-      <Card
+      <Box
         sx={{
-          p: { xs: 2, sm: 4 },
-          textAlign: "center",
-          borderRadius: 4,
-          background: (theme) =>
-            theme.palette.mode === "dark"
-              ? "linear-gradient(145deg,#1e293b,#0f172a)"
-              : "linear-gradient(145deg,#ffffff,#f8fafc)",
-          boxShadow:
-            "0 8px 25px rgba(0,0,0,0.15),0 4px 12px rgba(0,0,0,0.05)",
+          width: "100%",
+          maxWidth: 600,
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
         }}
       >
-        <CardContent
-          sx={{ p: { xs: 1, sm: 2 }, "&:last-child": { pb: 1 } }}
+        {/* Header */}
+        <Box textAlign="center">
+          <Typography variant="h4" fontWeight="bold" gutterBottom>
+            {t.title}
+          </Typography>
+
+          <Typography variant="body1" color="text.secondary">
+            {t.subtitle}
+          </Typography>
+
+          <Button
+            onClick={() => setDarkMode(!darkMode)}
+            sx={{ mt: 1 }}
+          >
+            {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+          </Button>
+        </Box>
+
+        {/* Instructions */}
+        <Paper
+          elevation={0}
+          sx={{
+            p: 3,
+            borderRadius: 3,
+            backgroundColor: darkMode ? "#1e293b" : "#ffffff",
+            border: "1px solid",
+            borderColor: darkMode ? "#334155" : "#e2e8f0",
+          }}
         >
-          {/* IDIOMA Y TEMA */}
-          <Stack
-            direction="row"
-            justifyContent="flex-end"
-            alignItems="center"
-            spacing={0.5}
-            sx={{ mb: 3 }}
-          >
-            <Button
-              size="small"
-              variant={language === "es" ? "contained" : "outlined"}
-              onClick={() => setLanguage("es")}
-              sx={{ minWidth: 44, fontWeight: 700 }}
-              aria-label="Español"
-            >
-              ES
-            </Button>
-
-            <Button
-              size="small"
-              variant={language === "en" ? "contained" : "outlined"}
-              onClick={() => setLanguage("en")}
-              sx={{ minWidth: 44, fontWeight: 700 }}
-              aria-label="English"
-            >
-              EN
-            </Button>
-
-            <Tooltip title={text.theme}>
-              <IconButton
-                onClick={toggleDarkMode}
-                color="primary"
-                aria-label={text.theme}
-                sx={{
-                  ml: 0.5,
-                  border: "1px solid",
-                  borderColor: "divider",
-                  width: 36,
-                  height: 36,
-                }}
-              >
-                {darkMode ? (
-                  <LightModeIcon fontSize="small" />
-                ) : (
-                  <DarkModeIcon fontSize="small" />
-                )}
-              </IconButton>
-            </Tooltip>
-          </Stack>
-
-          {/* TÍTULO */}
-          <Typography
-            variant="h4"
-            fontWeight="bold"
-            sx={{
-              color: "#2563eb",
-              mb: 1.5,
-              fontSize: { xs: "1.8rem", sm: "2.125rem" },
-            }}
-          >
-            {text.title}
+          <Typography variant="h6" fontWeight="bold" mb={2}>
+            {t.instructions}
           </Typography>
 
-          {/* PROYECTO E INSTITUTO */}
-          <Typography
-            variant="subtitle1"
-            fontWeight={700}
-            sx={{
-              mb: 0.5,
-              color: "text.primary",
-            }}
-          >
-            {text.project}
-          </Typography>
-
-          <Typography
-            variant="body2"
-            sx={{
-              mb: 3,
-              color: "text.primary",
-              letterSpacing: 0.3,
-            }}
-          >
-            {text.institute}
-          </Typography>
-
-          {/* DESARROLLADOR */}
-          <Typography
-            variant="body2"
-            sx={{
-              mb: 3,
-              fontWeight: 500,
-              color: (theme) =>
-                theme.palette.mode === "dark" ? "#cbd5f5" : "#334155",
-            }}
-          >
-            {text.developed}{" "}
-            <Box
-              component="span"
-              sx={{
-                fontWeight: 700,
-                color: (theme) =>
-                  theme.palette.mode === "dark" ? "#60a5fa" : "#1d4ed8",
-              }}
-            >
-              Jorge Patricio Santamaría Cherrez
-            </Box>
-          </Typography>
-
-          {/* INSTRUCCIONES - DISEÑO ORIGINAL */}
-          <Stack
-            spacing={1.5}
-            sx={{
-              textAlign: "left",
-              p: { xs: 2, sm: 3 },
-              mb: 3,
-              borderRadius: 3,
-              background: (theme) =>
-                theme.palette.mode === "dark"
-                  ? "rgba(100,116,139,0.15)"
-                  : "rgba(96,165,250,0.08)",
-              border: "1px solid",
-              borderColor: "divider",
-            }}
-          >
-            <Typography
-              variant="subtitle1"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1,
-                fontWeight: 600,
-              }}
-            >
-              <InfoIcon fontSize="small" />
-              {text.instructions}
-            </Typography>
-
-            <Typography
-              variant="body2"
-              sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}
-            >
-              <CheckCircleIcon
-                fontSize="small"
-                color="success"
-                sx={{ flexShrink: 0 }}
-              />
-              {text.questions}
-            </Typography>
-
-            <Typography
-              variant="body2"
-              sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}
-            >
-              <TimerIcon
-                fontSize="small"
-                color="warning"
-                sx={{ flexShrink: 0 }}
-              />
-              {text.time}
-            </Typography>
-
-            <Typography
-              variant="body2"
-              sx={{ display: "flex", alignItems: "flex-start", gap: 1 }}
-            >
-              <EmojiEventsIcon
-                fontSize="small"
-                color="primary"
-                sx={{ flexShrink: 0 }}
-              />
-              {text.points}
-            </Typography>
-          </Stack>
-
-          {/* MAIN FEATURES - SECCIÓN INDEPENDIENTE */}
-          <Box
-            sx={{
-              textAlign: "left",
-              mb: 3,
-              p: { xs: 2, sm: 3 },
-              borderRadius: 3,
-              background: (theme) =>
-                theme.palette.mode === "dark"
-                  ? "rgba(100,116,139,0.15)"
-                  : "rgba(96,165,250,0.08)",
-              border: "1px solid",
-              borderColor: "divider",
-            }}
-          >
-            <Stack
-              direction="row"
-              alignItems="center"
-              spacing={1}
-              sx={{ mb: 2 }}
-            >
-              <AutoAwesomeIcon color="primary" />
-
-              <Typography
-                variant="subtitle1"
-                fontWeight={700}
-                color="text.primary"
-              >
-                {text.featuresTitle}
-              </Typography>
-            </Stack>
-
-            <Stack spacing={1.5}>
-              {text.features.map((feature, index) => (
-                <Stack
+          <Box component="ul" sx={{ pl: 2.5, m: 0 }}>
+            {[t.instruction1, t.instruction2, t.instruction3].map(
+              (instruction, index) => (
+                <Typography
+                  component="li"
                   key={index}
-                  direction="row"
-                  alignItems="flex-start"
-                  spacing={1.2}
+                  variant="body2"
+                  sx={{ mb: 1 }}
                 >
-                  <Box
-                    sx={{
-                      width: 30,
-                      height: 30,
-                      minWidth: 30,
-                      borderRadius: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "primary.main",
-                      backgroundColor: (theme) =>
-                        theme.palette.mode === "dark"
-                          ? "rgba(37,99,235,0.18)"
-                          : "rgba(37,99,235,0.09)",
-                      "& svg": {
-                        fontSize: 18,
-                      },
-                    }}
-                  >
-                    {featureIcons[index]}
-                  </Box>
-
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      pt: 0.6,
-                      lineHeight: 1.5,
-                      color: "text.primary",
-                    }}
-                  >
-                    {feature}
-                  </Typography>
-                </Stack>
-              ))}
-            </Stack>
+                  {instruction}
+                </Typography>
+              )
+            )}
           </Box>
+        </Paper>
 
-          {/* SELECCIÓN DE DIFICULTAD */}
-          <Stack spacing={2} alignItems="center">
-            <Typography variant="body2" fontWeight={600}>
-              <BarChartIcon
-                fontSize="small"
-                sx={{ verticalAlign: "middle", mr: 0.5 }}
-              />
-              {text.difficulty}
-            </Typography>
+        {/* Main Features - Separate Section */}
+        <Paper
+          elevation={0}
+          sx={{
+            p: 3,
+            borderRadius: 3,
+            backgroundColor: darkMode ? "#1e293b" : "#ffffff",
+            border: "1px solid",
+            borderColor: darkMode ? "#334155" : "#e2e8f0",
+          }}
+        >
+          <Typography variant="h6" fontWeight="bold" mb={2}>
+            {t.mainFeatures}
+          </Typography>
 
-            <Box
-              sx={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <ToggleButtonGroup
-                exclusive
-                value={difficulty}
-                onChange={(event, value) => {
-                  if (value) setDifficulty(value);
-                }}
-                aria-label={text.difficulty}
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+            {features.map((feature, index) => (
+              <Box
+                key={index}
                 sx={{
-                  width: "100%",
-                  maxWidth: 360,
                   display: "flex",
+                  alignItems: "center",
+                  gap: 1.5,
                 }}
               >
-                {levels.map((level) => (
-                  <ToggleButton
-                    key={level.value}
-                    value={level.value}
-                    sx={{
-                      flex: 1,
-                      fontWeight: 600,
-                      borderRadius: 2,
-                      textAlign: "center",
-                      color:
-                        difficulty === level.value
-                          ? "#fff"
-                          : "text.primary",
-                      backgroundColor:
-                        difficulty === level.value
-                          ? colors[level.value].main
-                          : "transparent",
-                      "&.Mui-selected": {
-                        backgroundColor: colors[level.value].main,
-                        color: "#fff",
-                      },
-                      "&.Mui-selected:hover": {
-                        backgroundColor: colors[level.value].hover,
-                      },
-                    }}
-                  >
-                    {level.label}
-                  </ToggleButton>
-                ))}
-              </ToggleButtonGroup>
-            </Box>
-          </Stack>
+                <Box
+                  sx={{
+                    width: 30,
+                    height: 30,
+                    minWidth: 30,
+                    borderRadius: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: darkMode
+                      ? "rgba(100,116,139,0.15)"
+                      : "#ffffff",
+                    border: "1px solid",
+                    borderColor: "divider",
+                    "& svg": {
+                      fontSize: 18,
+                    },
+                  }}
+                >
+                  {featureIcons[index]}
+                </Box>
 
-          {/* BOTÓN COMENZAR */}
-          <Box mt={4}>
-            <Button
-              variant="contained"
-              startIcon={<PlayArrowIcon />}
-              onClick={onStart}
-              sx={{
-                px: 6,
-                py: 1.8,
-                fontSize: "1.1rem",
-                fontWeight: 600,
-                borderRadius: 3,
-                textTransform: "none",
-                boxShadow: "0 4px 12px rgba(37,99,235,0.25)",
-                "&:hover": {
-                  boxShadow: "0 6px 18px rgba(37,99,235,0.35)",
-                },
-              }}
-            >
-              {text.start}
-            </Button>
+                <Typography variant="body2">
+                  {feature}
+                </Typography>
+              </Box>
+            ))}
           </Box>
-        </CardContent>
-      </Card>
-    </motion.div>
+        </Paper>
+
+        {/* Difficulty */}
+        <Paper
+          elevation={0}
+          sx={{
+            p: 3,
+            borderRadius: 3,
+            backgroundColor: darkMode ? "#1e293b" : "#ffffff",
+            border: "1px solid",
+            borderColor: darkMode ? "#334155" : "#e2e8f0",
+          }}
+        >
+          <Typography variant="h6" fontWeight="bold" mb={2}>
+            {t.difficulty}
+          </Typography>
+
+          <FormControl fullWidth size="small">
+            <Select
+              value={difficulty}
+              onChange={(event) => setDifficulty(event.target.value)}
+            >
+              <MenuItem value="easy">{t.easy}</MenuItem>
+              <MenuItem value="medium">{t.medium}</MenuItem>
+              <MenuItem value="hard">{t.hard}</MenuItem>
+            </Select>
+          </FormControl>
+        </Paper>
+
+        {/* Start Button */}
+        <Button
+          variant="contained"
+          size="large"
+          onClick={onStart}
+          sx={{
+            py: 1.5,
+            borderRadius: 3,
+            fontWeight: "bold",
+            textTransform: "none",
+          }}
+        >
+          {t.start}
+        </Button>
+      </Box>
+    </Box>
   );
-}
+};
+
+export default WelcomeScreen;
