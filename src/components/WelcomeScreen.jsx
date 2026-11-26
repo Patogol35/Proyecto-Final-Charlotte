@@ -63,7 +63,9 @@ export default function WelcomeScreen({
       ? "Earn points for each correct answer."
       : "Gana puntos por cada respuesta correcta.",
 
-    featuresTitle: isEnglish ? "Main Features" : "Características principales",
+    featuresTitle: isEnglish
+      ? "Main Features"
+      : "Características principales",
 
     features: isEnglish
       ? [
@@ -90,6 +92,7 @@ export default function WelcomeScreen({
     easy: isEnglish ? "Easy" : "Fácil",
     medium: isEnglish ? "Medium" : "Medio",
     hard: isEnglish ? "Hard" : "Difícil",
+
     start: isEnglish ? "Start" : "Comenzar",
 
     theme: isEnglish
@@ -114,12 +117,12 @@ export default function WelcomeScreen({
   ];
 
   const featureIcons = [
-    <BarChartIcon fontSize="small" />,
-    <TimerIcon fontSize="small" />,
-    <AutoAwesomeIcon fontSize="small" />,
-    <DarkModeIcon fontSize="small" />,
-    <EmojiEventsIcon fontSize="small" />,
-    <RestartAltIcon fontSize="small" />,
+    <BarChartIcon />,
+    <TimerIcon />,
+    <AutoAwesomeIcon />,
+    <DarkModeIcon />,
+    <EmojiEventsIcon />,
+    <RestartAltIcon />,
   ];
 
   return (
@@ -254,9 +257,9 @@ export default function WelcomeScreen({
             </Box>
           </Typography>
 
-          {/* INSTRUCCIONES Y MAIN FEATURES */}
+          {/* INSTRUCCIONES - DISEÑO ORIGINAL */}
           <Stack
-            spacing={2}
+            spacing={1.5}
             sx={{
               textAlign: "left",
               p: { xs: 2, sm: 3 },
@@ -270,7 +273,6 @@ export default function WelcomeScreen({
               borderColor: "divider",
             }}
           >
-            {/* INSTRUCCIONES */}
             <Typography
               variant="subtitle1"
               sx={{
@@ -319,60 +321,84 @@ export default function WelcomeScreen({
               />
               {text.points}
             </Typography>
+          </Stack>
 
-            {/* SEPARADOR */}
-            <Box
-              sx={{
-                borderTop: "1px solid",
-                borderColor: "divider",
-                pt: 1.5,
-              }}
+          {/* MAIN FEATURES - SECCIÓN INDEPENDIENTE */}
+          <Box
+            sx={{
+              textAlign: "left",
+              mb: 3,
+              p: { xs: 2, sm: 3 },
+              borderRadius: 3,
+              background: (theme) =>
+                theme.palette.mode === "dark"
+                  ? "rgba(100,116,139,0.15)"
+                  : "rgba(96,165,250,0.08)",
+              border: "1px solid",
+              borderColor: "divider",
+            }}
+          >
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={1}
+              sx={{ mb: 2 }}
             >
+              <AutoAwesomeIcon color="primary" />
+
               <Typography
                 variant="subtitle1"
                 fontWeight={700}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 1,
-                  mb: 1.5,
-                }}
+                color="text.primary"
               >
-                <AutoAwesomeIcon
-                  fontSize="small"
-                  color="primary"
-                />
                 {text.featuresTitle}
               </Typography>
+            </Stack>
 
-              <Stack spacing={1.3}>
-                {text.features.map((feature, index) => (
-                  <Typography
-                    key={index}
-                    variant="body2"
+            <Stack spacing={1.5}>
+              {text.features.map((feature, index) => (
+                <Stack
+                  key={index}
+                  direction="row"
+                  alignItems="flex-start"
+                  spacing={1.2}
+                >
+                  <Box
                     sx={{
+                      width: 30,
+                      height: 30,
+                      minWidth: 30,
+                      borderRadius: 2,
                       display: "flex",
-                      alignItems: "flex-start",
-                      gap: 1,
-                      lineHeight: 1.5,
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "primary.main",
+                      backgroundColor: (theme) =>
+                        theme.palette.mode === "dark"
+                          ? "rgba(37,99,235,0.18)"
+                          : "rgba(37,99,235,0.09)",
+                      "& svg": {
+                        fontSize: 18,
+                      },
                     }}
                   >
-                    <Box
-                      sx={{
-                        color: "primary.main",
-                        display: "flex",
-                        flexShrink: 0,
-                        mt: "2px",
-                      }}
-                    >
-                      {featureIcons[index]}
-                    </Box>
+                    {featureIcons[index]}
+                  </Box>
+
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      pt: 0.6,
+                      lineHeight: 1.5,
+                      color: "text.primary",
+                    }}
+                  >
                     {feature}
                   </Typography>
-                ))}
-              </Stack>
-            </Box>
-          </Stack>
+                </Stack>
+              ))}
+            </Stack>
+          </Box>
 
           {/* SELECCIÓN DE DIFICULTAD */}
           <Stack spacing={2} alignItems="center">
