@@ -37,7 +37,7 @@ export default function WelcomeScreen({
   const isEnglish = language === "en";
 
   const text = {
-    title: isEnglish ? "Interactive Quiz" : "Quiz Interactivo",
+    title: isEnglish ? "Educational Quiz" : "Quiz Educacional",
 
     project: isEnglish
       ? "English Final Project"
